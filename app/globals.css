@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f7f9fb;
+  --surface-container: #eceef0;
+  --surface-container-high: #e9edf1;
+  --surface-container-low: #f2f4f6;
+  --surface-container-lowest: #ffffff;
+  --on-background: #191c1e;
+  --on-background-muted: #5f6973;
+  --primary: #0058be;
+  --primary-container: #2170e4;
+  --primary-foreground: #ffffff;
+  --tertiary: #006947;
+  --tertiary-fixed: #d8f3e8;
+  --on-tertiary-fixed: #003824;
+  --outline-variant: #7c8794;
+  --on-secondary-container: #25384b;
+  --ambient-shadow: 0 20px 40px rgb(25 28 30 / 0.04);
+  --glass-surface: rgb(247 249 251 / 0.8);
+  --ghost-outline: rgb(124 135 148 / 0.15);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--surface);
+  --color-foreground: var(--on-background);
+  --color-foreground-muted: var(--on-background-muted);
+  --color-surface: var(--surface);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-primary: var(--primary);
+  --color-primary-container: var(--primary-container);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-outline-variant: var(--outline-variant);
+  --color-on-secondary-container: var(--on-secondary-container);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-plus-jakarta);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --text-display-lg: clamp(3.75rem, 5.5vw, 6rem);
+  --text-display-lg--line-height: 0.95;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-headline-lg: clamp(2.5rem, 4vw, 3.75rem);
+  --text-headline-lg--line-height: 1.02;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-sm: clamp(1.5rem, 2vw, 2rem);
+  --text-headline-sm--line-height: 1.12;
+  --text-headline-sm--letter-spacing: -0.02em;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.75;
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.7;
+  --text-label-sm: 0.75rem;
+  --text-label-sm--line-height: 1.2;
+  --text-label-sm--letter-spacing: 0.05em;
+  --tracking-editorial: -0.02em;
+  --tracking-overline: 0.05em;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    background-color: var(--surface);
+    color: var(--on-background);
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top, rgb(33 112 228 / 0.08), transparent 32%),
+      linear-gradient(180deg, #ffffff 0%, var(--surface) 20%);
+    color: var(--on-background);
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: rgb(33 112 228 / 0.16);
+    color: var(--on-background);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .bg-primary-gradient {
+    background-image: linear-gradient(135deg, var(--primary), var(--primary-container));
+  }
+
+  .glass-surface {
+    background-color: var(--glass-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .shadow-ambient {
+    box-shadow: var(--ambient-shadow);
+  }
+
+  .ghost-outline {
+    outline: 1px solid var(--ghost-outline);
+  }
 }
