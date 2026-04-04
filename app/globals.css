@@ -40,7 +40,8 @@
   --color-on-secondary-container: var(--on-secondary-container);
   --font-sans: var(--font-inter);
   --font-display: var(--font-plus-jakarta);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --text-display-lg: clamp(3.75rem, 5.5vw, 6rem);
   --text-display-lg--line-height: 0.95;
   --text-display-lg--letter-spacing: -0.02em;
@@ -72,8 +73,11 @@
 
   body {
     min-height: 100vh;
-    background:
-      radial-gradient(circle at top, rgb(33 112 228 / 0.08), transparent 32%),
+    background: radial-gradient(
+        circle at top,
+        rgb(33 112 228 / 0.08),
+        transparent 32%
+      ),
       linear-gradient(180deg, #ffffff 0%, var(--surface) 20%);
     color: var(--on-background);
     font-family: var(--font-inter), system-ui, sans-serif;
@@ -103,7 +107,11 @@
 
 @layer utilities {
   .bg-primary-gradient {
-    background-image: linear-gradient(135deg, var(--primary), var(--primary-container));
+    background-image: linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-container)
+    );
   }
 
   .glass-surface {
@@ -118,5 +126,13 @@
 
   .ghost-outline {
     outline: 1px solid var(--ghost-outline);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

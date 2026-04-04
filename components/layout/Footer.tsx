@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const footerLinks = [
   { label: "Platform", href: "/" },
-  { label: "Operations", href: "#" },
+  { label: "Operations", href: "/operations" },
   { label: "Outcomes", href: "/outcomes" },
   { label: "Privacy", href: "#" },
 ];
@@ -104,10 +104,16 @@ export function Footer() {
           </p>
 
           <div className="flex gap-6">
-            <a href="#" className="text-slate-400 transition-colors hover:text-blue-500">
+            <a
+              href="#"
+              className="text-slate-400 transition-colors hover:text-blue-500"
+            >
               <ShareIcon />
             </a>
-            <a href="#" className="text-slate-400 transition-colors hover:text-blue-500">
+            <a
+              href="#"
+              className="text-slate-400 transition-colors hover:text-blue-500"
+            >
               <SupportIcon />
             </a>
           </div>

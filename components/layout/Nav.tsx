@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Platform", href: "/" },
-  { label: "Operations", href: "#" },
+  { label: "Operations", href: "/operations" },
   { label: "Outcomes", href: "/outcomes" },
 ];
 
@@ -14,6 +14,7 @@ export function Nav() {
   const isHomePage = pathname === "/";
   const isBuildMyAppPage = pathname?.startsWith("/build-my-app");
   const isOutcomesPage = pathname?.startsWith("/outcomes");
+  const isOperationsPage = pathname?.startsWith("/operations");
 
   return (
     <nav className="glass-surface fixed top-0 z-50 w-full border-b border-white/60 shadow-sm">
@@ -52,6 +53,7 @@ export function Nav() {
               href={item.href}
               className={
                 (isHomePage && item.label === "Platform") ||
+                (isOperationsPage && item.label === "Operations") ||
                 (isOutcomesPage && item.label === "Outcomes")
                   ? "border-b-2 border-primary py-1 text-sm font-semibold tracking-wide text-primary"
                   : "py-1 text-sm tracking-wide text-slate-600 transition-colors hover:text-primary"
