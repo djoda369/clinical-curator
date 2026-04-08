@@ -177,11 +177,11 @@ export default function OperationsPage() {
                 Manage templates <ChevronRightIcon className="h-4 w-4" />
               </button>
             </div>
-            <div className="-mx-6 flex gap-4 overflow-x-auto px-6 pb-4 no-scrollbar">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {campaignsAndTemplates.map((item) => (
                 <div
                   key={item.title}
-                  className="flex min-w-[240px] flex-col space-y-4 rounded-xl bg-surface-container-lowest p-5 shadow-ambient"
+                  className="flex min-w-0 flex-col space-y-4 rounded-xl bg-surface-container-lowest p-5 shadow-ambient"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-container text-primary">

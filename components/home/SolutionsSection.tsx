@@ -83,8 +83,8 @@ export function SolutionsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-12">
-          <article className="shadow-ambient group overflow-hidden rounded-xl bg-surface-container-lowest p-10 md:col-span-8">
-            <div className="flex flex-col items-center gap-12 md:flex-row">
+          <article className="shadow-ambient group overflow-hidden rounded-xl bg-surface-container-lowest p-6 sm:p-8 md:col-span-8 md:p-10">
+            <div className="flex flex-col items-stretch gap-10 md:flex-row md:items-center md:gap-12">
               <div className="flex-1">
                 <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-primary">
                   Primary use case
@@ -111,46 +111,60 @@ export function SolutionsSection() {
                 </ul>
               </div>
 
-              <div className="h-64 w-full flex-1 overflow-hidden rounded-lg bg-surface-container p-5">
-                <div className="h-full rounded-xl bg-surface-container-lowest p-4 transition-transform duration-700 group-hover:scale-[1.03]">
-                  <div className="mb-4 flex items-center justify-between">
+              <div className="w-full min-w-0 flex-1 overflow-hidden rounded-lg bg-surface-container p-4 md:h-64 md:p-5">
+                <div className="rounded-xl bg-surface-container-lowest p-4 transition-transform duration-700 group-hover:scale-[1.03] md:flex md:h-full md:flex-col">
+                  <div className="mb-4 flex items-center justify-between gap-2">
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-muted">
                       Recovery Workflow
                     </span>
-                    <span className="rounded-full bg-tertiary-fixed px-2.5 py-1 text-[10px] font-bold text-on-tertiary-fixed">
+                    <span className="shrink-0 rounded-full bg-tertiary-fixed px-2.5 py-1 text-[10px] font-bold text-on-tertiary-fixed">
                       LIVE
                     </span>
                   </div>
 
-                  <div className="grid h-[calc(100%-2rem)] grid-cols-[0.8fr_1.2fr] gap-3">
-                    <div className="rounded-lg bg-surface-container-low p-3">
+                  <div className="grid min-h-0 grid-cols-1 gap-4 md:min-h-0 md:flex-1 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-3">
+                    <div className="min-w-0 rounded-lg bg-surface-container-low p-3">
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-muted">
                         Entry rules
                       </p>
                       <div className="mt-3 space-y-2">
-                        <div className="rounded-md bg-surface-container px-3 py-2 text-xs text-foreground">
+                        <div className="rounded-md bg-surface-container px-3 py-2 text-xs leading-snug text-foreground">
                           Last visit 6+ months ago
                         </div>
-                        <div className="rounded-md bg-surface-container px-3 py-2 text-xs text-foreground">
+                        <div className="rounded-md bg-surface-container px-3 py-2 text-xs leading-snug text-foreground">
                           Overdue for follow-up
                         </div>
                       </div>
                     </div>
 
-                    <div className="rounded-lg bg-surface-container-low p-3">
+                    <div className="min-w-0 rounded-lg bg-surface-container-low p-3">
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-muted">
                         Sequence
                       </p>
-                      <div className="mt-3 flex h-[calc(100%-1.25rem)] items-center justify-between gap-2">
-                        <div className="flex-1 rounded-full bg-primary px-3 py-2 text-center text-xs font-semibold text-primary-foreground">
+                      <div className="mt-3 flex flex-col gap-2 md:h-[calc(100%-1.25rem)] md:flex-row md:items-center md:justify-between md:gap-1.5">
+                        <div className="w-full shrink-0 rounded-full bg-primary px-3 py-2.5 text-center text-xs font-semibold text-primary-foreground md:flex-1 md:py-2">
                           SMS
                         </div>
-                        <div className="h-px flex-1 bg-primary/25" />
-                        <div className="flex-1 rounded-full bg-surface-container px-3 py-2 text-center text-xs font-semibold text-foreground">
+                        <div
+                          className="mx-auto h-3 w-px shrink-0 bg-primary/35 md:hidden"
+                          aria-hidden
+                        />
+                        <div
+                          className="hidden h-px min-w-[6px] flex-1 bg-primary/25 md:block"
+                          aria-hidden
+                        />
+                        <div className="w-full shrink-0 rounded-full bg-surface-container px-3 py-2.5 text-center text-xs font-semibold text-foreground md:flex-1 md:py-2">
                           Email
                         </div>
-                        <div className="h-px flex-1 bg-tertiary/25" />
-                        <div className="flex-1 rounded-full bg-tertiary-fixed px-3 py-2 text-center text-xs font-semibold text-on-tertiary-fixed">
+                        <div
+                          className="mx-auto h-3 w-px shrink-0 bg-tertiary/35 md:hidden"
+                          aria-hidden
+                        />
+                        <div
+                          className="hidden h-px min-w-[6px] flex-1 bg-tertiary/25 md:block"
+                          aria-hidden
+                        />
+                        <div className="w-full shrink-0 rounded-full bg-tertiary-fixed px-3 py-2.5 text-center text-xs font-semibold text-on-tertiary-fixed md:flex-1 md:py-2">
                           Staff
                         </div>
                       </div>
@@ -165,7 +179,9 @@ export function SolutionsSection() {
             <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-blue-100">
               Supporting flow
             </span>
-            <h4 className="mb-4 text-3xl font-bold">Overdue recall automation</h4>
+            <h4 className="mb-4 text-3xl font-bold">
+              Overdue recall automation
+            </h4>
             <p className="leading-relaxed text-blue-100/90">
               Keep overdue recall from becoming lost revenue.
             </p>
@@ -173,7 +189,9 @@ export function SolutionsSection() {
             <div className="mt-12 rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-xs font-bold">RECALL PRIORITY</span>
-                <span className="text-xs font-bold text-tertiary-fixed">ACTIVE</span>
+                <span className="text-xs font-bold text-tertiary-fixed">
+                  ACTIVE
+                </span>
               </div>
               <div className="h-2 w-full rounded-full bg-white/20">
                 <div className="h-full w-[85%] rounded-full bg-tertiary-fixed" />
