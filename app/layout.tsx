@@ -10,7 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Clinical Curator",
-  description: "Editorial clinical operations software for modern healthcare teams.",
+  description:
+    "Clinic revenue and operations automation that reactivates inactive patients, rescues missed appointments, and reduces manual follow-up.",
 };
 
 const plusJakartaSans = Plus_Jakarta_Sans({

@@ -1,20 +1,3 @@
-const testimonials = [
-  {
-    quote:
-      "\"Clinical Curator changed how we view our patient list. It's no longer a static database, but a living engine for our practice growth.\"",
-    name: "Dr. Sarah Chen",
-    role: "Founder, Apex Health",
-    avatarClassName: "bg-slate-200",
-  },
-  {
-    quote:
-      "\"The ROI was immediate. We recovered $15k in missed appointments in the first week. The platform practically pays for itself.\"",
-    name: "Mark Thompson",
-    role: "Clinic Manager, Riverside Dental",
-    avatarClassName: "bg-slate-300",
-  },
-];
-
 function QuoteIcon() {
   return (
     <svg
@@ -31,36 +14,24 @@ function QuoteIcon() {
 export function TestimonialsSection() {
   return (
     <section className="px-6 py-24 md:px-10">
-      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2">
-        {testimonials.map((testimonial) => (
-          <article
-            key={testimonial.name}
-            className="shadow-ambient relative rounded-[2rem] bg-surface-container-low p-12"
-          >
-            <div className="absolute right-12 top-8">
-              <QuoteIcon />
-            </div>
+      <div className="mx-auto max-w-4xl">
+        <article className="shadow-ambient relative rounded-[2rem] bg-surface-container-low p-12 text-center">
+          <div className="absolute right-12 top-8">
+            <QuoteIcon />
+          </div>
 
-            <p className="mb-12 max-w-xl text-xl font-medium leading-relaxed text-foreground-muted">
-              {testimonial.quote}
-            </p>
-
-            <div className="flex items-center gap-4">
-              <div
-                className={`h-16 w-16 rounded-full ${testimonial.avatarClassName}`}
-                aria-hidden="true"
-              />
-              <div>
-                <h5 className="text-lg font-bold text-foreground">
-                  {testimonial.name}
-                </h5>
-                <p className="text-sm text-foreground-muted">
-                  {testimonial.role}
-                </p>
-              </div>
-            </div>
-          </article>
-        ))}
+          <p className="mb-6 text-xs font-bold uppercase tracking-[0.18em] text-foreground-muted">
+            Proof-safe statement
+          </p>
+          <p className="mx-auto mb-8 max-w-3xl text-2xl font-medium leading-relaxed text-foreground-muted">
+            The platform is designed to justify itself through recovered
+            appointments, recovered revenue, and lower manual follow-up.
+          </p>
+          <p className="text-sm text-foreground-muted">
+            Replace this section with verified client quotes when they are
+            available.
+          </p>
+        </article>
       </div>
     </section>
   );

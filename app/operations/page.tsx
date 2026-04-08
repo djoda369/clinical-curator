@@ -5,71 +5,84 @@ import { Nav } from "@/components/layout/Nav";
 export const metadata: Metadata = {
   title: "Operations — Clinical Curator",
   description:
-    "Operational overview: scheduling, staff status, active treatment plans, and facility throughput.",
+    "Campaign templates, recovery workflows, and practice operations for scheduling, staff coordination, and service setup.",
 };
 
-const scheduleAvatars = [
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuCz9XUCeFSkRNRLtqyYbtaMMRmDBuEUfVveRK_3_zKpMbEMiOQ-0KVO9siGXuOOOlHvh--LvwHeHU9dG0hnrDANMDUgFCUp7l4kKLP8fhjoLYCKt0KKq-UjasTujHFhmkZqgSgnrTvt6d4SoWBRavbSR01qgxREpqy_F5TupUhgwPAOLHok4gcUkOYqdZ1kUtkzJ_W73fsWMGmX4zNUiU7t3SC_mp7S0Szl2ZxebId2l6IEeIr_8qG1ho5hakw1Setd0TZJ_eHaoQ4",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuC15P77XAXhsVk4Cvmi2510iUBEjRz6kUFQYiQP14-wQ27OQKmm2W4GPHyes-y_Ev5z3Z2TI2QF1CZKu0SfENhuXty9GOVEaR3by33LGSCUZceLdgMqRdou_DdXEAcUIXw8WQ0oJH8Bs0tSDw9PdrqBNrIvND9xd_rAfa6iG59q4-g9uK_FOQp7OodTJZlhIh9wH6hL_2COoZ-QMVgCUnrKhUYng-jv2_6FOb1dQtdTDDmmZ0XtB7MU2Fxf7_ULD-h5BvzDh7WBhlI",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuD83_sF102McdqqO3fUMv73b_r-79OzSmhCzu-SAKCeGbSeJgclu-aR3Gwn2Pr5ZUJs_NEnW6sUuwxObGMHNPTq4wyIdTvkStWpuK6G2gEac_bSvCHwS8j_LzboAu8ntftOGvBZFRoqU3fkmUlGG1lsBIDZBNRxDEUlhOXsDPlAsl9Bp4jFskE5lRc-1Yl8WTOh8j4TkaIZg_h3jP_2fzo0fIxOFIdbXgdBMZUTG7DN6KWONZG3GCpfhjB6VciqnhjYUJG5kpMwgl8",
-];
-
-const staff = [
+const campaignsAndTemplates = [
   {
-    name: "Dr. Sarah L.",
-    role: "Pediatrics",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB-GTTyY2jeZVXKOzD5OXUo9FvOFFAeam0oKup7WLZNt39LxK-Xy5B2deFcBJ-ze0xR9BBAkCrF5PypLlDeuC-jyPoBeAYDrk7b9dzVHrOFguDYb5UfM0WQkHMcfc7rfTnhdOuQn_jQEUJZuLv6osZ-o_V16GYXPaXkDuadddtR7IFNotMUlzaNqwr6oE1qleienBiYWLyIQHZM1pEfRlN9Kv7bedFVS1iN4qly83LR9h8LYlc3LY-t69hqjoHhDVbWrbxIW8E5xMQ",
-    statusDot: "bg-tertiary",
-    statusLabel: "Active",
+    kind: "Template",
+    title: "Inactive patient reactivation",
+    detail: "Email + SMS · 4 touchpoints",
+    statusLabel: "In use",
     statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
-    grayscale: false,
+    kindClass: "bg-tertiary/10 text-tertiary",
   },
   {
-    name: "Dr. James K.",
-    role: "Surgery",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA6OTNKMLkdkPZCeMa5BMBTu0z0_58UIDHXppUG91SWAicdfANzOSclVyWYL5TzFSIcrrABgCpExoAIl6bQ6B-nK-W-Qz1GEyvou4w8UsAuQuN1JDQ2xkKvhJl3zTdBYJs_Tv9dWKyb1DRQk2KwZChaOXzVStZbapWw1EnmkK71ESTOYWvqaKPDp4T8984lJdc-2F_pk3DzleUx6zQvveYdiL7776zwlUFwlVBEK4EZmpcRe2edQftTjQkrFx7etA0Md0wwDGlowO0",
-    statusDot: "bg-orange-500",
-    statusLabel: "In Surgery",
-    statusClass: "bg-surface-container-high text-foreground-muted",
-    grayscale: false,
+    kind: "Campaign",
+    title: "Recall & rebooking push",
+    detail: "Audience from queue · 3-step sequence",
+    statusLabel: "Running",
+    statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
+    kindClass: "bg-primary/10 text-primary",
   },
   {
-    name: "Anna Wu, RN",
-    role: "Triage",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCLX39VEtkBDSxUDSTxsneMwCVRkuBDxWQl8uNaQz6N5FYfOALu_6ks3S2jcNvnUR1iDOF_PuKaI9oaRbh3mTJc3EfPXh8Ty-jT1wcUvzQzSJD836nVHQiNlFki106CPmGev2bBhn72pV6R_w6j3co-lg4T2SoUR7dpZt0NI_qe5X7jwzv6pDlijhRN-G4RkvKj80pDI0z8FSZL2LIGm_ENpCaftnPD5kOPz2seKH6-uMlDD5uRVZTzOnbMJSqA3StHmjcQJJtKln4",
-    statusDot: "bg-slate-300",
-    statusLabel: "Offline",
-    statusClass: "bg-surface-container text-foreground-muted",
-    grayscale: true,
+    kind: "Template",
+    title: "Canceled visit rescue",
+    detail: "SMS sequence · editable copy",
+    statusLabel: "Live",
+    statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
+    kindClass: "bg-tertiary/10 text-tertiary",
   },
 ] as const;
 
-const treatmentPlans = [
+const operationsControls = [
   {
-    title: "Cardiac Recovery v2",
-    patients: "12 Patients",
-    progress: 75,
-    barClass: "bg-primary",
+    title: "Scheduling",
+    description:
+      "Keep calendars, availability windows, and booking rules aligned with the patient demand your recovery flows generate.",
+  },
+  {
+    title: "Team management",
+    description:
+      "Organize staff availability and responsibilities so follow-up, booking, and day-to-day operations stay coordinated.",
+  },
+  {
+    title: "Services",
+    description:
+      "Define the services, durations, and booking constraints you want patients to see before they land on the wrong slot.",
+  },
+] as const;
+
+const recoveryFlows = [
+  {
+    title: "Inactive Patient Reactivation",
+    status: "Patients ready",
+    description:
+      "Automatically stages outreach for patients who have gone quiet until they book or need staff attention.",
     iconWrap: "bg-blue-50 text-blue-600",
     icon: (
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
         className="h-6 w-6"
-        fill="currentColor"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        <circle cx="10" cy="8" r="3" />
+        <path d="M4.5 18a5.5 5.5 0 0 1 11 0" />
+        <path d="M18 8v6" />
+        <path d="M15 11h6" />
       </svg>
     ),
   },
   {
-    title: "Post-Op Neurology",
-    patients: "8 Patients",
-    progress: 40,
-    barClass: "bg-tertiary",
+    title: "Canceled Appointment Rescue",
+    status: "Visits ready",
+    description:
+      "Re-engages canceled visits quickly so open slots have a better chance of being rebooked before they disappear.",
     iconWrap: "bg-green-50 text-green-600",
     icon: (
       <svg
@@ -78,18 +91,23 @@ const treatmentPlans = [
         className="h-6 w-6"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <path d="M12 3a9 9 0 1 0 9 9" />
-        <path d="M12 3v6l4 2" />
+        <path d="M8 4.75v3.5" />
+        <path d="M16 4.75v3.5" />
+        <rect x="4.75" y="6.75" width="14.5" height="12.5" rx="2" />
+        <path d="M4.75 11h14.5" />
+        <path d="m9 15 2 2 4-4" />
       </svg>
     ),
   },
   {
-    title: "Physical Rehab B",
-    patients: "24 Patients",
-    progress: 90,
-    barClass: "bg-purple-500",
+    title: "No-show Recovery",
+    status: "Same-day queue",
+    description:
+      "Triggers same-day follow-up and hands staff only the exceptions that genuinely need a person to intervene.",
     iconWrap: "bg-purple-50 text-purple-600",
     icon: (
       <svg
@@ -98,13 +116,12 @@ const treatmentPlans = [
         className="h-6 w-6"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
-        <path d="M6.5 6.5h11v11h-11z" />
-        <path d="M6.5 17.5v3" />
-        <path d="M17.5 17.5v3" />
-        <path d="M6.5 6.5v-3" />
-        <path d="M17.5 6.5v-3" />
+        <path d="M12 6v6l4 2" />
+        <circle cx="12" cy="12" r="8.25" />
       </svg>
     ),
   },
@@ -132,100 +149,88 @@ export default function OperationsPage() {
 
       <main className="min-h-screen px-6 pb-24 pt-28 md:px-10 lg:px-14">
         <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
-          <section className="space-y-2">
+          <section className="space-y-3">
             <span className="block text-[11px] font-medium uppercase tracking-widest text-foreground-muted">
-              Operational Overview
+              Operations Layer
             </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              Operations
+            <h1 className="max-w-4xl font-display text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+              Operations that recover revenue without more manual follow-up.
             </h1>
           </section>
 
-          <section className="grid grid-cols-12 gap-4">
-            <div className="col-span-12 flex min-h-[160px] flex-col justify-between rounded-xl bg-surface-container-lowest p-6 shadow-ambient">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h2 className="font-display text-lg font-bold text-foreground">
-                    Today&apos;s Schedule
-                  </h2>
-                  <p className="text-sm text-foreground-muted">
-                    14 Appointments remaining
-                  </p>
-                </div>
-                <div className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                  92% Capacity
-                </div>
-              </div>
-              <div className="mt-4 flex items-end justify-between">
-                <div className="flex -space-x-3">
-                  {scheduleAvatars.map((src, i) => (
-                    <img
-                      key={i}
-                      alt=""
-                      src={src}
-                      className="h-10 w-10 rounded-full border-4 border-surface-container-lowest object-cover"
-                    />
-                  ))}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border-4 border-surface-container-lowest bg-surface-container-high text-[10px] font-bold text-foreground-muted">
-                    +8
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  className="rounded-full bg-linear-to-br from-primary to-primary-container px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all hover:saturate-150"
-                >
-                  View List
-                </button>
-              </div>
-            </div>
-          </section>
-
           <section className="space-y-6">
-            <div className="flex items-end justify-between">
-              <h2 className="font-display text-2xl font-bold text-foreground">
-                Staff Status
-              </h2>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground">
+                  Campaigns &amp; templates
+                </h2>
+                <p className="mt-1 max-w-xl text-sm text-foreground-muted">
+                  Reusable message templates and the campaigns that send
+                  them—built for clinic recovery workflows, not generic
+                  marketing blasts.
+                </p>
+              </div>
               <button
                 type="button"
-                className="flex items-center gap-1 text-sm font-semibold text-primary"
+                className="flex shrink-0 items-center gap-1 text-sm font-semibold text-primary"
               >
-                Manage <ChevronRightIcon className="h-4 w-4" />
+                Manage templates <ChevronRightIcon className="h-4 w-4" />
               </button>
             </div>
             <div className="-mx-6 flex gap-4 overflow-x-auto px-6 pb-4 no-scrollbar">
-              {staff.map((member) => (
+              {campaignsAndTemplates.map((item) => (
                 <div
-                  key={member.name}
-                  className="flex min-w-[160px] flex-col items-center space-y-3 rounded-xl bg-surface-container-lowest p-4 text-center shadow-ambient"
+                  key={item.title}
+                  className="flex min-w-[240px] flex-col space-y-4 rounded-xl bg-surface-container-lowest p-5 shadow-ambient"
                 >
-                  <div className="relative">
-                    <div
-                      className={`h-16 w-16 overflow-hidden rounded-full ${
-                        member.grayscale ? "grayscale" : ""
-                      }`}
-                    >
-                      <img
-                        alt=""
-                        src={member.image}
-                        className="h-full w-full object-cover"
-                      />
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface-container text-primary">
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        className="h-6 w-6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        {item.kind === "Campaign" ? (
+                          <>
+                            <path d="M4 19V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14" />
+                            <path d="M8 7h8" />
+                            <path d="M8 11h5" />
+                          </>
+                        ) : (
+                          <>
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <path d="M14 2v6h6" />
+                            <path d="M8 13h8" />
+                            <path d="M8 17h6" />
+                          </>
+                        )}
+                      </svg>
                     </div>
-                    <span
-                      className={`absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-surface-container-lowest ${member.statusDot}`}
-                    />
+                    <div
+                      className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${item.kindClass}`}
+                    >
+                      {item.kind}
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-bold text-foreground">
-                      {member.name}
+
+                  <div className="space-y-1">
+                    <p className="text-base font-bold text-foreground">
+                      {item.title}
                     </p>
-                    <p className="text-[11px] text-foreground-muted">
-                      {member.role}
+                    <p className="text-sm text-foreground-muted">
+                      {item.detail}
                     </p>
                   </div>
+
                   <div
-                    className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${member.statusClass}`}
+                    className={`w-fit rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${item.statusClass}`}
                   >
-                    {member.statusLabel}
+                    {item.statusLabel}
                   </div>
                 </div>
               ))}
@@ -234,32 +239,30 @@ export default function OperationsPage() {
 
           <section className="space-y-6">
             <h2 className="font-display text-2xl font-bold text-foreground">
-              Active Treatment Plans
+              Active Recovery Flows
             </h2>
             <div className="space-y-4">
-              {treatmentPlans.map((plan) => (
+              {recoveryFlows.map((flow) => (
                 <div
-                  key={plan.title}
-                  className="flex items-center gap-4 rounded-xl bg-surface-container-lowest p-5 shadow-ambient"
+                  key={flow.title}
+                  className="flex flex-col gap-4 rounded-xl bg-surface-container-lowest p-5 shadow-ambient md:flex-row md:items-start md:justify-between"
                 >
-                  <div
-                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${plan.iconWrap}`}
-                  >
-                    {plan.icon}
+                  <div className="flex gap-4">
+                    <div
+                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${flow.iconWrap}`}
+                    >
+                      {flow.icon}
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-bold text-foreground">{flow.title}</p>
+                      <p className="max-w-2xl text-sm text-foreground-muted">
+                        {flow.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex justify-between gap-2">
-                      <p className="font-bold text-foreground">{plan.title}</p>
-                      <span className="shrink-0 text-xs text-foreground-muted">
-                        {plan.patients}
-                      </span>
-                    </div>
-                    <div className="mt-2 h-1.5 w-full rounded-full bg-surface-container-low">
-                      <div
-                        className={`h-full rounded-full ${plan.barClass}`}
-                        style={{ width: `${plan.progress}%` }}
-                      />
-                    </div>
+
+                  <div className="shrink-0 rounded-full bg-surface-container px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">
+                    {flow.status}
                   </div>
                 </div>
               ))}
@@ -269,19 +272,33 @@ export default function OperationsPage() {
           <section className="relative overflow-hidden rounded-xl bg-surface-container-low p-6">
             <div className="relative z-10">
               <h3 className="mb-2 text-xs font-bold uppercase tracking-widest text-foreground-muted">
-                Facility Throughput
+                Practice operations
               </h3>
-              <div className="flex items-end gap-3">
-                <span className="font-display text-4xl font-black text-foreground">
-                  +18.4%
-                </span>
-                <div className="mb-1 rounded-full bg-tertiary-fixed px-2 py-0.5 text-[10px] font-bold text-on-tertiary-fixed">
-                  TRENDING UP
-                </div>
-              </div>
-              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-foreground-muted">
-                Average patient discharge time improved by 12 mins this week.
+              <h2 className="max-w-3xl font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+                Run scheduling, staff coordination, and service setup from one
+                operational layer.
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-foreground-muted md:text-base">
+                Keep the systems behind booking organized so your recovery
+                campaigns connect to real availability, the right team members,
+                and the right services without extra manual cleanup.
               </p>
+
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                {operationsControls.map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-xl bg-surface-container-lowest/90 p-4 shadow-ambient"
+                  >
+                    <p className="text-sm font-semibold text-foreground">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="pointer-events-none absolute bottom-0 right-0 h-full w-1/2 opacity-20">
               <svg

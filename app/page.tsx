@@ -20,9 +20,9 @@ export default function Home() {
           <Hero />
           <MetricsSection />
           <ProblemsSection />
+          <StepsSection />
           <SolutionsSection />
           <OperationsSection />
-          <StepsSection />
           <OutcomesSection />
           <TestimonialsSection />
           <CtaSection />

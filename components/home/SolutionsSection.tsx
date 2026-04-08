@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const campaignChecks = [
-  "Smart Segmenting by Last Visit",
-  "Personalized Offer Routing",
+  "Segment by last visit, service, or recall status",
+  "Escalate to staff only when a patient needs human follow-up",
 ];
 
 const stars = Array.from({ length: 5 });
@@ -57,24 +57,28 @@ function StarIcon() {
 
 export function SolutionsSection() {
   return (
-    <section className="rounded-[2rem] bg-surface-container-low px-6 py-24 md:px-10">
+    <section
+      id="recovery-workflows"
+      className="rounded-[2rem] bg-surface-container-low px-6 py-24 md:px-10"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              The growth engine for modern practices.
+              A recovery system that works inside clinic operations.
             </h2>
             <p className="mt-6 text-xl text-foreground-muted">
-              We don&apos;t just send emails. We orchestrate complex clinical logic
-              to ensure every patient journey is optimized for retention.
+              Clinical Curator sits on top of your current workflow to automate
+              reactivation, recall, and rebooking while only handing staff the
+              tasks that actually need a person.
             </p>
           </div>
 
           <Link
-            href="#"
+            href="/#recovery-workflows"
             className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-8 py-3 font-bold text-surface transition-colors hover:bg-primary md:w-auto"
           >
-            Explore Features
+            Explore Recovery Workflows
           </Link>
         </div>
 
@@ -83,15 +87,15 @@ export function SolutionsSection() {
             <div className="flex flex-col items-center gap-12 md:flex-row">
               <div className="flex-1">
                 <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-primary">
-                  Automation
+                  Primary use case
                 </span>
                 <h4 className="mb-4 text-3xl font-bold text-foreground">
-                  Reactivation campaigns
+                  Inactive patient reactivation
                 </h4>
                 <p className="mb-8 leading-relaxed text-foreground-muted">
-                  Intelligent SMS and email workflows triggered by patient activity
-                  data. We identify the right time to reach out before they switch
-                  providers.
+                  Automatically identify patients who have gone quiet and send
+                  staged SMS and email follow-up until they book or need staff
+                  outreach.
                 </p>
 
                 <ul className="space-y-4">
@@ -111,7 +115,7 @@ export function SolutionsSection() {
                 <div className="h-full rounded-xl bg-surface-container-lowest p-4 transition-transform duration-700 group-hover:scale-[1.03]">
                   <div className="mb-4 flex items-center justify-between">
                     <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-muted">
-                      Campaign Builder
+                      Recovery Workflow
                     </span>
                     <span className="rounded-full bg-tertiary-fixed px-2.5 py-1 text-[10px] font-bold text-on-tertiary-fixed">
                       LIVE
@@ -121,14 +125,14 @@ export function SolutionsSection() {
                   <div className="grid h-[calc(100%-2rem)] grid-cols-[0.8fr_1.2fr] gap-3">
                     <div className="rounded-lg bg-surface-container-low p-3">
                       <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-muted">
-                        Triggers
+                        Entry rules
                       </p>
                       <div className="mt-3 space-y-2">
                         <div className="rounded-md bg-surface-container px-3 py-2 text-xs text-foreground">
-                          Last visit 8 months ago
+                          Last visit 6+ months ago
                         </div>
                         <div className="rounded-md bg-surface-container px-3 py-2 text-xs text-foreground">
-                          High-value service eligible
+                          Overdue for follow-up
                         </div>
                       </div>
                     </div>
@@ -147,7 +151,7 @@ export function SolutionsSection() {
                         </div>
                         <div className="h-px flex-1 bg-tertiary/25" />
                         <div className="flex-1 rounded-full bg-tertiary-fixed px-3 py-2 text-center text-xs font-semibold text-on-tertiary-fixed">
-                          Booked
+                          Staff
                         </div>
                       </div>
                     </div>
@@ -159,21 +163,20 @@ export function SolutionsSection() {
 
           <article className="rounded-xl bg-primary p-10 text-primary-foreground shadow-xl md:col-span-4">
             <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-blue-100">
-              Core Engine
+              Supporting flow
             </span>
-            <h4 className="mb-4 text-3xl font-bold">Recall automation</h4>
+            <h4 className="mb-4 text-3xl font-bold">Overdue recall automation</h4>
             <p className="leading-relaxed text-blue-100/90">
-              Automate 100% of your hygiene and routine check-up reminders without
-              lifting a finger.
+              Keep overdue recall from becoming lost revenue.
             </p>
 
             <div className="mt-12 rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
               <div className="mb-4 flex items-center justify-between">
-                <span className="text-xs font-bold">RECALL EFFICIENCY</span>
-                <span className="text-xs font-bold text-tertiary-fixed">+94%</span>
+                <span className="text-xs font-bold">RECALL PRIORITY</span>
+                <span className="text-xs font-bold text-tertiary-fixed">ACTIVE</span>
               </div>
               <div className="h-2 w-full rounded-full bg-white/20">
-                <div className="h-full w-[94%] rounded-full bg-tertiary-fixed" />
+                <div className="h-full w-[85%] rounded-full bg-tertiary-fixed" />
               </div>
             </div>
           </article>
@@ -183,34 +186,34 @@ export function SolutionsSection() {
               No-show recovery
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Immediate re-engagement for missed appointments to fill last-minute
-              cancellations.
+              Trigger same-day rebooking outreach after missed visits so empty
+              slots do not stay empty.
             </p>
             <SyncProblemIcon />
           </article>
 
           <article className="shadow-ambient rounded-xl bg-surface-container-lowest p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Treatment continuation
+              Canceled appointment rescue
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Follow up on high-value treatment plans that patients haven&apos;t
-              committed to yet.
+              Re-engage patients who cancel before the visit disappears for
+              good.
             </p>
             <div className="flex gap-2">
               <span className="rounded-full bg-tertiary-fixed px-3 py-1 text-[10px] font-bold text-on-tertiary-fixed">
-                PENDING: $8.4K
+                READY TO REBOOK
               </span>
             </div>
           </article>
 
           <article className="shadow-ambient rounded-xl bg-surface-container-lowest p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Follow-up workflows
+              Post-visit follow-up
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Post-op and post-visit satisfaction checks that drive reviews and
-              patient loyalty.
+              Send timely follow-up after visits or treatment so patients stay
+              engaged without adding admin work.
             </p>
             <div className="flex items-center gap-1">
               {stars.map((_, index) => (

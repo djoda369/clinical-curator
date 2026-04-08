@@ -3,7 +3,7 @@ const steps = [
     number: "01",
     title: "Connect",
     description:
-      "Securely sync your existing Patient Management System (PMS) with our platform in under 10 minutes.",
+      "Connect your patient data and define the patient groups you want to recover first.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ const steps = [
     number: "02",
     title: "Identify",
     description:
-      "Our AI scans your database to find every inactive, overdue, or lost patient segment ready for reactivation.",
+      "We identify inactive patients, missed appointments, and overdue follow-up opportunities ready for automation.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ const steps = [
     number: "03",
     title: "Launch",
     description:
-      "Activate pre-built editorial templates and watch your schedule fill up with high-intent bookings.",
+      "Turn on the first recovery flows and give your team clear next steps only where human follow-up is needed.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -74,15 +74,18 @@ const steps = [
 
 export function StepsSection() {
   return (
-    <section className="border-t border-surface-container bg-surface px-6 py-24 md:px-10">
+    <section
+      id="how-it-works"
+      className="border-t border-surface-container bg-surface px-6 py-24 md:px-10"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-20 max-w-3xl text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground">
             Launch your recovery system in 3 steps.
           </h2>
           <p className="mt-6 text-foreground-muted">
-            A streamlined onboarding process designed to get your practice live
-            without disrupting your daily patient flow.
+            Start with the patient opportunities already in your data and go
+            live without a disruptive implementation.
           </p>
         </div>
 

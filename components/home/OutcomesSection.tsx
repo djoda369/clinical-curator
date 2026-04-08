@@ -1,21 +1,15 @@
 const outcomes = [
   {
-    value: "+120%",
-    title: "Repeat Visits",
-    description:
-      "Average increase in patient frequency within the first 6 months of implementation.",
+    title: "Recovered Appointments",
+    description: "Use real clinic data here before publish.",
   },
   {
-    value: "$4.2k",
-    title: "Higher LTV",
-    description:
-      "Average increase in Lifetime Value per patient through consistent recall compliance.",
+    title: "Rebooked Cancellations",
+    description: "Use real clinic data here before publish.",
   },
   {
-    value: "28h",
-    title: "Staff Efficiency",
-    description:
-      "Weekly admin hours saved on phone calls and manual scheduling per practice location.",
+    title: "Front Desk Time Saved",
+    description: "Use real clinic data here before publish.",
   },
 ];
 
@@ -26,10 +20,12 @@ export function OutcomesSection() {
         <div className="mb-16 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-4xl font-extrabold tracking-tight text-surface md:text-5xl">
-              Turn retention into recurring revenue.
+              Measure what the system is recovering.
             </h2>
             <p className="mt-4 text-xl text-blue-100/80">
-              Concrete results measured across our 500+ clinic network.
+              Use real clinic data here. Prioritize recovered appointments,
+              rebooked cancellations, and staff time saved over lifetime-value
+              claims.
             </p>
           </div>
         </div>
@@ -40,10 +36,10 @@ export function OutcomesSection() {
               key={outcome.title}
               className="rounded-2xl border border-white/10 bg-white/5 p-10 transition-all hover:bg-white/10"
             >
-              <div className="mb-6 text-5xl font-extrabold text-tertiary-fixed">
-                {outcome.value}
-              </div>
-              <h4 className="mb-3 text-xl font-bold text-surface">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-blue-100/70">
+                Proof-safe placeholder
+              </p>
+              <h4 className="mb-3 text-3xl font-extrabold text-tertiary-fixed">
                 {outcome.title}
               </h4>
               <p className="text-blue-100/70">{outcome.description}</p>

@@ -1,8 +1,8 @@
 const problems = [
   {
-    title: "Inactive Patients",
+    title: "Inactive patients",
     description:
-      "Patients who haven't visited in 6-12 months are likely already looking for alternatives.",
+      "Patients who disappear for 6+ months rarely come back consistently unless someone follows up with a repeatable process.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -21,9 +21,9 @@ const problems = [
     ),
   },
   {
-    title: "Overdue Recalls",
+    title: "Cancellations that vanish",
     description:
-      "Routine checkups that get missed represent the highest lifetime value loss for any clinic.",
+      "Every canceled appointment that is not rescued quickly turns open schedule time into lost revenue.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -45,9 +45,9 @@ const problems = [
     ),
   },
   {
-    title: "Unfinished Plans",
+    title: "Follow-up with no system",
     description:
-      "Treatment plans that were started but never completed stall both health outcomes and revenue.",
+      "When outreach depends on memory, spreadsheets, and whoever has time, recoverable opportunities slip through.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -67,9 +67,9 @@ const problems = [
     ),
   },
   {
-    title: "No-show Recovery",
+    title: "No-shows with no rescue flow",
     description:
-      "Every empty chair is a sunk cost. Failing to rebook no-shows immediately hurts the bottom line.",
+      "Without immediate rebooking outreach, empty chair time stays empty instead of turning back into booked care.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -96,8 +96,12 @@ export function ProblemsSection() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-            Your patient database is sitting on lost revenue.
+            Your clinic is already sitting on recoverable revenue.
           </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground-muted">
+            It leaks out when past patients stay inactive, canceled appointments
+            are not rescued, and follow-up depends on whoever has time that day.
+          </p>
           <div className="mx-auto mt-4 h-1.5 w-24 rounded-full bg-primary" />
         </div>
 

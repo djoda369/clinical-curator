@@ -1,10 +1,11 @@
+import Script from "next/script";
 import { Nav } from "@/components/layout/Nav";
 
 const benefitPillars = [
   {
-    title: "Increase revenue",
+    title: "Recover missed revenue",
     description:
-      "Recover missed follow-ups and capitalize on latent patient lists.",
+      "Find inactive patients, missed appointments, and follow-up gaps already sitting in your database.",
     toneClassName: "bg-tertiary-fixed text-on-tertiary-fixed",
     icon: (
       <svg
@@ -23,8 +24,9 @@ const benefitPillars = [
     ),
   },
   {
-    title: "Improve retention",
-    description: "Fill more appointments by keeping your practice top-of-mind.",
+    title: "Reduce manual follow-up",
+    description:
+      "Show your team where automation should handle outreach and where staff should step in.",
     toneClassName: "bg-primary/10 text-primary",
     icon: (
       <svg
@@ -44,9 +46,9 @@ const benefitPillars = [
     ),
   },
   {
-    title: "Automate patient reactivation",
+    title: "Prioritize fast wins",
     description:
-      "Reduce manual workload and let intelligent workflows handle the outreach.",
+      "Start with the highest-value recovery flows first, not a full system overhaul.",
     toneClassName: "bg-sky-100 text-sky-700",
     icon: (
       <svg
@@ -68,17 +70,10 @@ const benefitPillars = [
   },
 ];
 
-const bookingTimes = [
-  "Oct 24\n09:00",
-  "Oct 24\n11:30",
-  "Oct 25\n14:00",
-  "Oct 25\n16:30",
-];
-
 const trustStats = [
   {
-    value: "$42.8k",
-    label: "Recovered Revenue",
+    value: "Recovered Appointments",
+    label: "Use verified clinic data only",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -97,8 +92,8 @@ const trustStats = [
     ),
   },
   {
-    value: "+12%",
-    label: "Repeat Visit Growth",
+    value: "Rebooked Missed Visits",
+    label: "Track from follow-up workflows",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -119,8 +114,8 @@ const trustStats = [
     ),
   },
   {
-    value: "99.2%",
-    label: "Patient Satisfaction",
+    value: "Front Desk Time Saved",
+    label: "Measure against manual follow-up",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -141,29 +136,31 @@ const trustStats = [
 const roadmapSteps = [
   {
     number: "01",
-    title: "Workflow Review",
+    title: "Current workflow review",
     description:
-      "We audit your current practice operations to identify bottlenecks and leakage points in your patient lifecycle.",
+      "We look at how inactive patients, cancellations, no-shows, and recalls are handled today.",
   },
   {
     number: "02",
-    title: "Opportunity Mapping",
+    title: "Revenue opportunity mapping",
     description:
-      "Our specialists map out every reactivation trigger, from lapsed appointments to personalized health reminders.",
+      "We identify which patient groups and follow-up flows can produce the fastest measurable return.",
   },
   {
     number: "03",
-    title: "Platform Preview",
+    title: "Recommended rollout",
     description:
-      "Experience a tailored version of Clinical Excellence built specifically for your practice data and goals.",
+      "You leave with a practical first rollout focused on recovered appointments, recovered revenue, and staff time saved.",
   },
 ];
 
 const footerLinks = [
   { label: "Privacy Policy", href: "#" },
   { label: "Terms of Service", href: "#" },
-  { label: "Contact Support", href: "#" },
+  { label: "Schedule a Call", href: "/build-my-app#booking" },
 ];
+
+const calendlyEventUrl = "https://calendly.com/djordje-stankovic-priv/30min";
 
 function BrandIcon() {
   return (
@@ -209,6 +206,10 @@ function CalendarIcon() {
 export default function BuildMyAppPage() {
   return (
     <>
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="afterInteractive"
+      />
       <Nav />
       <main className="px-6 pb-20 pt-32">
         <div className="mx-auto max-w-7xl">
@@ -216,16 +217,15 @@ export default function BuildMyAppPage() {
             <div className="space-y-12 lg:col-span-6">
               <div className="space-y-6">
                 <span className="inline-block rounded-full bg-surface-container px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-on-secondary-container">
-                  Exclusive Practice Growth
+                  Build my app
                 </span>
                 <h1 className="font-display text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground md:text-6xl">
-                  Build your patient <br />
-                  <span className="text-primary italic">reactivation app</span>
+                  Build the recovery app your clinic actually needs.
                 </h1>
                 <p className="max-w-xl text-xl leading-relaxed text-foreground-muted">
-                  See your healthcare app come to life while we map your
-                  reactivation and retention opportunities to recover missed
-                  revenue and automate repeat-visit workflows.
+                  Book a 30-minute planning call to walk through how your clinic
+                  handles reactivation, recalls, and missed appointments today.
+                  We&apos;ll map the recovery opportunities worth solving first.
                 </p>
               </div>
 
@@ -259,108 +259,34 @@ export default function BuildMyAppPage() {
               <div className="rounded-[2rem] bg-surface-container-lowest p-8 shadow-[0_20px_40px_rgba(25,28,30,0.04)] ring-1 ring-outline-variant/10 md:p-10">
                 <h2 className="mb-8 flex items-center gap-3 font-display text-2xl font-bold text-foreground">
                   <CalendarIcon />
-                  Schedule your blueprint session
+                  Let's build your recovery app
                 </h2>
+                <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground-muted">
+                  Choose a time that works for you. We&apos;ll review your
+                  current workflow, identify the highest-value recovery
+                  opportunities, and outline the right first version for your
+                  clinic.
+                </p>
 
-                <form className="space-y-6">
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                        Practice Name
-                      </label>
-                      <input
-                        className="w-full rounded-xl border-none bg-surface-container-low p-4 text-sm transition-all outline-none focus:bg-surface-container-lowest"
-                        placeholder="Health City Wellness"
-                        type="text"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                        Website
-                      </label>
-                      <input
-                        className="w-full rounded-xl border-none bg-surface-container-low p-4 text-sm transition-all outline-none focus:bg-surface-container-lowest"
-                        placeholder="https://practice.com"
-                        type="url"
-                      />
-                    </div>
-                  </div>
+                <div className="overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low">
+                  <div
+                    className="calendly-inline-widget"
+                    data-url={calendlyEventUrl}
+                    style={{ minWidth: "320px", height: "750px" }}
+                  />
+                </div>
 
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                        Contact Name
-                      </label>
-                      <input
-                        className="w-full rounded-xl border-none bg-surface-container-low p-4 text-sm transition-all outline-none focus:bg-surface-container-lowest"
-                        placeholder="Dr. Sarah Jenkins"
-                        type="text"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                        Work Email
-                      </label>
-                      <input
-                        className="w-full rounded-xl border-none bg-surface-container-low p-4 text-sm transition-all outline-none focus:bg-surface-container-lowest"
-                        placeholder="sarah@practice.com"
-                        type="email"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                        Practice Type
-                      </label>
-                      <select className="w-full appearance-none rounded-xl border-none bg-surface-container-low p-4 text-sm outline-none transition-all focus:bg-surface-container-lowest">
-                        <option>Dermatology</option>
-                        <option>Dental</option>
-                        <option>Primary Care</option>
-                        <option>Physical Therapy</option>
-                      </select>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                        Monthly Volume
-                      </label>
-                      <select className="w-full appearance-none rounded-xl border-none bg-surface-container-low p-4 text-sm outline-none transition-all focus:bg-surface-container-lowest">
-                        <option>100-500 patients</option>
-                        <option>500-1,000 patients</option>
-                        <option>1,000+ patients</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 pt-4">
-                    <label className="text-xs font-bold uppercase tracking-wider text-foreground-muted">
-                      Select Booking Time
-                    </label>
-                    <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-                      {bookingTimes.map((time, index) => (
-                        <button
-                          key={time}
-                          className={
-                            index === 1
-                              ? "rounded-xl bg-primary px-2 py-3 text-center text-xs font-medium text-primary-foreground"
-                              : "rounded-xl bg-surface-container px-2 py-3 text-center text-xs font-medium transition-all hover:bg-primary hover:text-primary-foreground"
-                          }
-                          type="button"
-                        >
-                          {time.split("\n")[0]} <br /> {time.split("\n")[1]}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <button
-                    className="bg-primary-gradient w-full rounded-full py-5 text-lg font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:brightness-110 active:scale-[0.98]"
-                    type="submit"
+                <p className="mt-4 text-sm text-foreground-muted">
+                  Having trouble loading the calendar?{" "}
+                  <a
+                    href={calendlyEventUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-primary transition-colors hover:text-primary-container"
                   >
-                    Confirm Blueprint Booking
-                  </button>
-                </form>
+                    Open Calendly in a new tab.
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -370,7 +296,7 @@ export default function BuildMyAppPage() {
             className="mt-24 border-t border-outline-variant/10 pt-12 text-center"
           >
             <p className="mb-10 text-sm font-bold uppercase tracking-[0.2em] text-foreground-muted/60">
-              Trusted by modern healthcare practices
+              What clinics track first
             </p>
             <div className="flex flex-wrap items-center justify-center gap-12 opacity-40 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:gap-24">
               {trustStats.map((stat) => (
@@ -392,10 +318,11 @@ export default function BuildMyAppPage() {
           <section id="roadmap" className="mt-32">
             <div className="mb-16 text-center">
               <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-                The Roadmap to Your New App
+                What happens on the call
               </h2>
               <p className="mt-4 text-foreground-muted">
-                Simple, transparent, and clinical-focused onboarding.
+                We review your clinic setup together, identify the fastest
+                recovery opportunities, and define the best first rollout.
               </p>
             </div>
 
@@ -427,7 +354,7 @@ export default function BuildMyAppPage() {
               <BrandIcon />
             </span>
             <span className="font-display text-sm font-semibold text-slate-800">
-              Clinical Curator Excellence
+              Clinical Curator
             </span>
           </div>
 
@@ -444,7 +371,7 @@ export default function BuildMyAppPage() {
           </div>
 
           <p className="text-xs text-slate-500">
-            © 2024 Clinical Curator Excellence. All rights reserved.
+            © 2026 Clinical Curator. All rights reserved.
           </p>
         </div>
       </footer>

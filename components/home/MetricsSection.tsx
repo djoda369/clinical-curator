@@ -1,22 +1,22 @@
 const metrics = [
   {
-    label: "Reactivated Patients",
-    value: "2,400+",
+    title: "Inactive Patients Reactivated",
+    note: "Use verified clinic data only.",
     accentClassName: "border-primary/10",
   },
   {
-    label: "Revenue Recovered",
-    value: "$1.2M+",
+    title: "Revenue Recovered",
+    note: "Use verified clinic data only.",
     accentClassName: "border-tertiary/10",
   },
   {
-    label: "Repeat Visit Growth",
-    value: "42%",
+    title: "Booked Appointments Recovered",
+    note: "Use verified clinic data only.",
     accentClassName: "border-sky-500/10",
   },
   {
-    label: "Manual Time Saved",
-    value: "15h/wk",
+    title: "Front Desk Time Saved",
+    note: "Use verified clinic data only.",
     accentClassName: "border-primary/10",
   },
 ];
@@ -28,15 +28,18 @@ export function MetricsSection() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map((metric) => (
             <article
-              key={metric.label}
+              key={metric.title}
               className={`shadow-ambient rounded-xl border-b-4 bg-surface-container-lowest p-8 ${metric.accentClassName}`}
             >
-              <p className="mb-2 text-sm font-medium text-foreground-muted">
-                {metric.label}
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-foreground-muted">
+                Proof-safe metric
               </p>
-              <h3 className="font-display text-3xl font-extrabold text-foreground">
-                {metric.value}
+              <h3 className="font-display text-2xl font-extrabold leading-tight text-foreground">
+                {metric.title}
               </h3>
+              <p className="mt-4 text-sm leading-relaxed text-foreground-muted">
+                {metric.note}
+              </p>
             </article>
           ))}
         </div>
