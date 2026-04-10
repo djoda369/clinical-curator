@@ -1,15 +1,15 @@
 const outcomes = [
   {
-    title: "Recovered Appointments",
-    description: "Use real clinic data here before publish.",
+    title: "Recovered Bookings",
+    description: "Use real business data here before publish.",
   },
   {
     title: "Rebooked Cancellations",
-    description: "Use real clinic data here before publish.",
+    description: "Use real business data here before publish.",
   },
   {
-    title: "Front Desk Time Saved",
-    description: "Use real clinic data here before publish.",
+    title: "Team Time Saved",
+    description: "Use real business data here before publish.",
   },
 ];
 
@@ -23,8 +23,8 @@ export function OutcomesSection() {
               Measure what the system is recovering.
             </h2>
             <p className="mt-4 text-xl text-blue-100/80">
-              Use real clinic data here. Prioritize recovered appointments,
-              rebooked cancellations, and staff time saved over lifetime-value
+              Use real business data here. Prioritize recovered bookings,
+              rebooked cancellations, and team time saved over lifetime-value
               claims.
             </p>
           </div>

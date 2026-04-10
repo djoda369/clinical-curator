@@ -3,15 +3,15 @@ import { Footer } from "@/components/layout/Footer";
 import { Nav } from "@/components/layout/Nav";
 
 export const metadata: Metadata = {
-  title: "Operations — Clinical Curator",
+  title: "Features — Recally",
   description:
-    "Campaign templates, recovery workflows, and practice operations for scheduling, staff coordination, and service setup.",
+    "Campaign templates, recovery workflows, scheduling controls, and team coordination for better booking follow-up.",
 };
 
 const campaignsAndTemplates = [
   {
     kind: "Template",
-    title: "Inactive patient reactivation",
+    title: "Inactive client reactivation",
     detail: "Email + SMS · 4 touchpoints",
     statusLabel: "In use",
     statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
@@ -19,7 +19,7 @@ const campaignsAndTemplates = [
   },
   {
     kind: "Campaign",
-    title: "Recall & rebooking push",
+    title: "Return reminder & rebooking push",
     detail: "Audience from queue · 3-step sequence",
     statusLabel: "Running",
     statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
@@ -27,7 +27,7 @@ const campaignsAndTemplates = [
   },
   {
     kind: "Template",
-    title: "Canceled visit rescue",
+    title: "Canceled booking rescue",
     detail: "SMS sequence · editable copy",
     statusLabel: "Live",
     statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
@@ -39,26 +39,26 @@ const operationsControls = [
   {
     title: "Scheduling",
     description:
-      "Keep calendars, availability windows, and booking rules aligned with the patient demand your recovery flows generate.",
+      "Keep calendars, availability windows, and booking rules aligned with the demand your recovery flows generate.",
   },
   {
     title: "Team management",
     description:
-      "Organize staff availability and responsibilities so follow-up, booking, and day-to-day operations stay coordinated.",
+      "Organize staff availability and responsibilities so follow-up, booking, and day-to-day workflows stay coordinated.",
   },
   {
     title: "Services",
     description:
-      "Define the services, durations, and booking constraints you want patients to see before they land on the wrong slot.",
+      "Define the services, durations, and booking constraints you want clients to see before they land on the wrong slot.",
   },
 ] as const;
 
 const recoveryFlows = [
   {
-    title: "Inactive Patient Reactivation",
-    status: "Patients ready",
+    title: "Inactive Client Reactivation",
+    status: "Clients ready",
     description:
-      "Automatically stages outreach for patients who have gone quiet until they book or need staff attention.",
+      "Automatically stages outreach for clients who have gone quiet until they book or need staff attention.",
     iconWrap: "bg-blue-50 text-blue-600",
     icon: (
       <svg
@@ -79,10 +79,10 @@ const recoveryFlows = [
     ),
   },
   {
-    title: "Canceled Appointment Rescue",
-    status: "Visits ready",
+    title: "Canceled Booking Rescue",
+    status: "Bookings ready",
     description:
-      "Re-engages canceled visits quickly so open slots have a better chance of being rebooked before they disappear.",
+      "Re-engages canceled bookings quickly so open slots have a better chance of being rebooked before they disappear.",
     iconWrap: "bg-green-50 text-green-600",
     icon: (
       <svg
@@ -151,10 +151,10 @@ export default function OperationsPage() {
         <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
           <section className="space-y-3">
             <span className="block text-[11px] font-medium uppercase tracking-widest text-foreground-muted">
-              Operations Layer
+              Feature Overview
             </span>
             <h1 className="max-w-4xl font-display text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              Operations that recover revenue without more manual follow-up.
+              Features built to recover revenue without more manual follow-up.
             </h1>
           </section>
 
@@ -166,7 +166,7 @@ export default function OperationsPage() {
                 </h2>
                 <p className="mt-1 max-w-xl text-sm text-foreground-muted">
                   Reusable message templates and the campaigns that send
-                  them—built for clinic recovery workflows, not generic
+                  them—built for retention workflows, not generic
                   marketing blasts.
                 </p>
               </div>
@@ -272,11 +272,11 @@ export default function OperationsPage() {
           <section className="relative overflow-hidden rounded-xl bg-surface-container-low p-6">
             <div className="relative z-10">
               <h3 className="mb-2 text-xs font-bold uppercase tracking-widest text-foreground-muted">
-                Practice operations
+                Daily workflows
               </h3>
               <h2 className="max-w-3xl font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-                Run scheduling, staff coordination, and service setup from one
-                operational layer.
+                Run bookings, team coordination, and service setup from one
+                workflow layer.
               </h2>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-foreground-muted md:text-base">
                 Keep the systems behind booking organized so your recovery

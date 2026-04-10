@@ -25,7 +25,7 @@ export function TestimonialsSection() {
           </p>
           <p className="mx-auto mb-8 max-w-3xl text-2xl font-medium leading-relaxed text-foreground-muted">
             The platform is designed to justify itself through recovered
-            appointments, recovered revenue, and lower manual follow-up.
+            bookings, recovered revenue, and lower manual follow-up.
           </p>
           <p className="text-sm text-foreground-muted">
             Replace this section with verified client quotes when they are

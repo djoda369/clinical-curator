@@ -1,22 +1,22 @@
 const metrics = [
   {
-    title: "Inactive Patients Reactivated",
-    note: "Use verified clinic data only.",
+    title: "Inactive Clients Reactivated",
+    note: "Use verified business data only.",
     accentClassName: "border-primary/10",
   },
   {
     title: "Revenue Recovered",
-    note: "Use verified clinic data only.",
+    note: "Use verified business data only.",
     accentClassName: "border-tertiary/10",
   },
   {
-    title: "Booked Appointments Recovered",
-    note: "Use verified clinic data only.",
+    title: "Bookings Recovered",
+    note: "Use verified business data only.",
     accentClassName: "border-sky-500/10",
   },
   {
-    title: "Front Desk Time Saved",
-    note: "Use verified clinic data only.",
+    title: "Team Time Saved",
+    note: "Use verified business data only.",
     accentClassName: "border-primary/10",
   },
 ];

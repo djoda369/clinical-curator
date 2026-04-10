@@ -17,14 +17,13 @@ export function CtaSection() {
 
         <div className="relative z-10">
           <h2 className="mb-8 text-4xl font-extrabold md:text-6xl">
-            Build the recovery experience your clinic runs on.
+            Turn your existing client base into repeat bookings.
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-blue-100">
-            <span className="font-semibold text-white">Build my app</span> walks
-            you through what to recover first—inactive patients, missed visits,
-            and recalls—then how you want it to feel for patients and staff.
-            You&apos;ll shape the flow and get a preview of what you ship before
-            you go live.
+            See which inactive clients, missed bookings, and follow-up
+            opportunities you can recover first. We&apos;ll map the best starting
+            flows and show how the experience can work for both clients and
+            staff.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
@@ -32,13 +31,13 @@ export function CtaSection() {
               href="/build-my-app"
               className="rounded-full bg-white px-10 py-5 text-xl font-bold text-primary shadow-xl transition-all hover:scale-105 active:scale-95"
             >
-              Build my app
+              Find Recoverable Revenue
             </Link>
             <Link
               href="/build-my-app#roadmap"
               className="rounded-full border-2 border-white/30 px-10 py-5 text-xl font-bold text-white transition-all hover:bg-white/10"
             >
-              See the roadmap
+              See the Recovery Process
             </Link>
           </div>
         </div>

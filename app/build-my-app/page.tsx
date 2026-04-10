@@ -5,7 +5,7 @@ const benefitPillars = [
   {
     title: "Recover missed revenue",
     description:
-      "Find inactive patients, missed appointments, and follow-up gaps already sitting in your database.",
+      "Find inactive clients, missed bookings, and follow-up gaps already sitting in your database.",
     toneClassName: "bg-tertiary-fixed text-on-tertiary-fixed",
     icon: (
       <svg
@@ -72,8 +72,8 @@ const benefitPillars = [
 
 const trustStats = [
   {
-    value: "Recovered Appointments",
-    label: "Use verified clinic data only",
+    value: "Recovered Bookings",
+    label: "Use verified business data only",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ const trustStats = [
     ),
   },
   {
-    value: "Rebooked Missed Visits",
+    value: "Rebooked Missed Bookings",
     label: "Track from follow-up workflows",
     icon: (
       <svg
@@ -114,7 +114,7 @@ const trustStats = [
     ),
   },
   {
-    value: "Front Desk Time Saved",
+    value: "Team Time Saved",
     label: "Measure against manual follow-up",
     icon: (
       <svg
@@ -138,19 +138,19 @@ const roadmapSteps = [
     number: "01",
     title: "Current workflow review",
     description:
-      "We look at how inactive patients, cancellations, no-shows, and recalls are handled today.",
+      "We look at how inactive clients, cancellations, no-shows, and return reminders are handled today.",
   },
   {
     number: "02",
     title: "Revenue opportunity mapping",
     description:
-      "We identify which patient groups and follow-up flows can produce the fastest measurable return.",
+      "We identify which client groups and follow-up flows can produce the fastest measurable return.",
   },
   {
     number: "03",
     title: "Recommended rollout",
     description:
-      "You leave with a practical first rollout focused on recovered appointments, recovered revenue, and staff time saved.",
+      "You leave with a practical first rollout focused on recovered bookings, recovered revenue, and team time saved.",
   },
 ];
 
@@ -217,15 +217,16 @@ export default function BuildMyAppPage() {
             <div className="space-y-12 lg:col-span-6">
               <div className="space-y-6">
                 <span className="inline-block rounded-full bg-surface-container px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-on-secondary-container">
-                  Build my app
+                  Find Recoverable Revenue
                 </span>
                 <h1 className="font-display text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground md:text-6xl">
-                  Build the recovery app your clinic actually needs.
+                  See where your recoverable revenue is hiding.
                 </h1>
                 <p className="max-w-xl text-xl leading-relaxed text-foreground-muted">
-                  Book a 30-minute planning call to walk through how your clinic
-                  handles reactivation, recalls, and missed appointments today.
-                  We&apos;ll map the recovery opportunities worth solving first.
+                  Book a 30-minute planning call to walk through how your
+                  business handles client reactivation, return reminders, and
+                  missed bookings today. We&apos;ll map the recovery opportunities
+                  worth solving first.
                 </p>
               </div>
 
@@ -259,13 +260,13 @@ export default function BuildMyAppPage() {
               <div className="rounded-[2rem] bg-surface-container-lowest p-8 shadow-[0_20px_40px_rgba(25,28,30,0.04)] ring-1 ring-outline-variant/10 md:p-10">
                 <h2 className="mb-8 flex items-center gap-3 font-display text-2xl font-bold text-foreground">
                   <CalendarIcon />
-                  Let's build your recovery app
+                  Find your recoverable revenue
                 </h2>
                 <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground-muted">
                   Choose a time that works for you. We&apos;ll review your
                   current workflow, identify the highest-value recovery
                   opportunities, and outline the right first version for your
-                  clinic.
+                  business.
                 </p>
 
                 <div className="overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low">
@@ -295,9 +296,6 @@ export default function BuildMyAppPage() {
             id="proof"
             className="mt-24 border-t border-outline-variant/10 pt-12 text-center"
           >
-            <p className="mb-10 text-sm font-bold uppercase tracking-[0.2em] text-foreground-muted/60">
-              What clinics track first
-            </p>
             <div className="flex flex-wrap items-center justify-center gap-12 opacity-40 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:gap-24">
               {trustStats.map((stat) => (
                 <div key={stat.label} className="flex items-center gap-3">
@@ -321,7 +319,7 @@ export default function BuildMyAppPage() {
                 What happens on the call
               </h2>
               <p className="mt-4 text-foreground-muted">
-                We review your clinic setup together, identify the fastest
+                We review your business setup together, identify the fastest
                 recovery opportunities, and define the best first rollout.
               </p>
             </div>
@@ -354,7 +352,7 @@ export default function BuildMyAppPage() {
               <BrandIcon />
             </span>
             <span className="font-display text-sm font-semibold text-slate-800">
-              Clinical Curator
+              Recally
             </span>
           </div>
 
@@ -371,7 +369,7 @@ export default function BuildMyAppPage() {
           </div>
 
           <p className="text-xs text-slate-500">
-            © 2026 Clinical Curator. All rights reserved.
+            © 2026 Recally. All rights reserved.
           </p>
         </div>
       </footer>

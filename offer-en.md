@@ -1,4 +1,8 @@
 Offer Brief
+Brand Name
+
+Recally
+
 Core Offer
 
 We provide a system that helps healthcare practices increase revenue and improve operations without adding chaos, complicated implementation, or more manual follow-up for staff. It functions as a revenue and operations engine for clinics by bringing back inactive patients, reducing missed opportunities, and helping the team run more efficiently. In practical terms, we help clinics generate more booked appointments, lose fewer patients, and reduce manual work for staff.

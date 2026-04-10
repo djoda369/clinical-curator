@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const campaignChecks = [
-  "Segment by last visit, service, or recall status",
-  "Escalate to staff only when a patient needs human follow-up",
+  "Segment by last booking, service, or return timing",
+  "Escalate to staff only when a client needs human follow-up",
 ];
 
 const stars = Array.from({ length: 5 });
@@ -65,12 +65,12 @@ export function SolutionsSection() {
         <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              A recovery system that works inside clinic operations.
+              A recovery system that fits into daily workflows.
             </h2>
             <p className="mt-6 text-xl text-foreground-muted">
-              Clinical Curator sits on top of your current workflow to automate
-              reactivation, recall, and rebooking while only handing staff the
-              tasks that actually need a person.
+              Recally sits on top of your current workflow to automate
+              reactivation, return reminders, and rebooking while only handing
+              your team the tasks that actually need a person.
             </p>
           </div>
 
@@ -90,12 +90,12 @@ export function SolutionsSection() {
                   Primary use case
                 </span>
                 <h4 className="mb-4 text-3xl font-bold text-foreground">
-                  Inactive patient reactivation
+                  Inactive client reactivation
                 </h4>
                 <p className="mb-8 leading-relaxed text-foreground-muted">
-                  Automatically identify patients who have gone quiet and send
-                  staged SMS and email follow-up until they book or need staff
-                  outreach.
+                  Automatically identify clients who have gone quiet and send
+                  staged SMS and email follow-up until they book again or need
+                  direct outreach from your team.
                 </p>
 
                 <ul className="space-y-4">
@@ -129,10 +129,10 @@ export function SolutionsSection() {
                       </p>
                       <div className="mt-3 space-y-2">
                         <div className="rounded-md bg-surface-container px-3 py-2 text-xs leading-snug text-foreground">
-                          Last visit 6+ months ago
+                          Last booking past return window
                         </div>
                         <div className="rounded-md bg-surface-container px-3 py-2 text-xs leading-snug text-foreground">
-                          Overdue for follow-up
+                          No future booking scheduled
                         </div>
                       </div>
                     </div>
@@ -180,15 +180,15 @@ export function SolutionsSection() {
               Supporting flow
             </span>
             <h4 className="mb-4 text-3xl font-bold">
-              Overdue recall automation
+              Return booking reminders
             </h4>
             <p className="leading-relaxed text-blue-100/90">
-              Keep overdue recall from becoming lost revenue.
+              Keep overdue return reminders from becoming lost revenue.
             </p>
 
             <div className="mt-12 rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
               <div className="mb-4 flex items-center justify-between">
-                <span className="text-xs font-bold">RECALL PRIORITY</span>
+                <span className="text-xs font-bold">FOLLOW-UP PRIORITY</span>
                 <span className="text-xs font-bold text-tertiary-fixed">
                   ACTIVE
                 </span>
@@ -201,10 +201,10 @@ export function SolutionsSection() {
 
           <article className="rounded-xl bg-surface-container-high p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              No-show recovery
+              Missed booking recovery
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Trigger same-day rebooking outreach after missed visits so empty
+              Trigger same-day rebooking outreach after missed bookings so open
               slots do not stay empty.
             </p>
             <SyncProblemIcon />
@@ -212,10 +212,10 @@ export function SolutionsSection() {
 
           <article className="shadow-ambient rounded-xl bg-surface-container-lowest p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Canceled appointment rescue
+              Canceled booking rescue
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Re-engage patients who cancel before the visit disappears for
+              Re-engage clients who cancel before the booking disappears for
               good.
             </p>
             <div className="flex gap-2">
@@ -227,11 +227,11 @@ export function SolutionsSection() {
 
           <article className="shadow-ambient rounded-xl bg-surface-container-lowest p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Post-visit follow-up
+              Post-service follow-up
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Send timely follow-up after visits or treatment so patients stay
-              engaged without adding admin work.
+              Send timely follow-up after services so clients stay engaged
+              without adding admin work.
             </p>
             <div className="flex items-center gap-1">
               {stars.map((_, index) => (

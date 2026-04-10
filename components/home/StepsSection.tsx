@@ -3,7 +3,7 @@ const steps = [
     number: "01",
     title: "Connect",
     description:
-      "Connect your patient data and define the patient groups you want to recover first.",
+      "Connect your client and booking data and define the client groups you want to recover first.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -28,7 +28,7 @@ const steps = [
     number: "02",
     title: "Identify",
     description:
-      "We identify inactive patients, missed appointments, and overdue follow-up opportunities ready for automation.",
+      "We identify inactive clients, missed bookings, and overdue follow-up opportunities ready for automation.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -84,7 +84,7 @@ export function StepsSection() {
             Launch your recovery system in 3 steps.
           </h2>
           <p className="mt-6 text-foreground-muted">
-            Start with the patient opportunities already in your data and go
+            Start with the recovery opportunities already in your data and go
             live without a disruptive implementation.
           </p>
         </div>

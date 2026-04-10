@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Platform", href: "/" },
-  { label: "Operations", href: "/operations" },
+  { label: "Functionality", href: "/operations" },
 ];
 
 function linkClassName(active: boolean) {
@@ -56,30 +57,19 @@ export function Nav() {
       <nav className="glass-surface fixed top-0 z-50 w-full border-b border-white/60 shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M9 4.75h6.5a2.75 2.75 0 0 1 2.75 2.75v9.25a2.5 2.5 0 0 1-2.5 2.5H8.5A2.75 2.75 0 0 1 5.75 16.5V8A3.25 3.25 0 0 1 9 4.75Z" />
-                <path d="M8.5 8.75h7" />
-                <path d="M8.5 12h7" />
-                <path d="M8.5 15.25h4.25" />
-              </svg>
-            </div>
-
             <Link
               href="/"
-              className="bg-linear-to-br from-primary to-primary-container bg-clip-text font-display text-xl font-bold tracking-tight text-transparent"
+              className="flex items-center"
               onClick={() => setMobileOpen(false)}
             >
-              Clinical Curator
+              <Image
+                src="/Recally_Logo.png"
+                alt="Recally"
+                width={320}
+                height={96}
+                priority
+                className="h-12 w-auto md:h-14 scale-250"
+              />
             </Link>
           </div>
 
@@ -89,8 +79,8 @@ export function Nav() {
                 key={item.label}
                 href={item.href}
                 className={linkClassName(
-                  (isHomePage && item.label === "Platform") ||
-                    (isOperationsPage && item.label === "Operations")
+                  (isHomePage && item.href === "/") ||
+                    (isOperationsPage && item.href === "/operations"),
                 )}
               >
                 {item.label}
@@ -105,7 +95,7 @@ export function Nav() {
                   : "rounded-full bg-primary px-6 py-2.5 font-medium text-primary-foreground transition-all duration-200 hover:opacity-90 active:scale-95"
               }
             >
-              Build my app
+              Find Recoverable Revenue
             </Link>
           </div>
 
@@ -157,8 +147,8 @@ export function Nav() {
                   key={item.label}
                   href={item.href}
                   className={`rounded-lg px-3 py-3 ${
-                    (isHomePage && item.label === "Platform") ||
-                    (isOperationsPage && item.label === "Operations")
+                    (isHomePage && item.href === "/") ||
+                    (isOperationsPage && item.href === "/operations")
                       ? "bg-primary/10 font-semibold text-primary"
                       : "text-slate-600 hover:bg-surface-container"
                   }`}
@@ -176,7 +166,7 @@ export function Nav() {
                 }
                 onClick={() => setMobileOpen(false)}
               >
-                Build my app
+                Find Recoverable Revenue
               </Link>
             </div>
           </div>

@@ -3,9 +3,9 @@
 
 ## 1. Overview & Creative North Star
 
-### The Creative North Star: "The Clinical Curator"
+### The Creative North Star: "Recally"
 
-In the saturated market of healthcare SaaS, most platforms feel either overly sterile (utilitarian) or distractingly "tech-heavy." This design system adopts the persona of **The Clinical Curator**. It is a system that prioritizes mental clarity, professional authority, and rhythmic whitespace.
+In the saturated market of healthcare SaaS, most platforms feel either overly sterile (utilitarian) or distractingly "tech-heavy." This design system adopts the persona of **Recally**. It is a system that prioritizes mental clarity, professional authority, and rhythmic whitespace.
 
 We break the "template" look by moving away from rigid 1px borders and boxy containers. Instead, we use **Intentional Asymmetry** and **Tonal Depth**. By overlapping high-end device mockups with oversized, editorial typography and nested surfaces, we create a digital environment that feels more like a premium medical journal or a high-end fintech dashboard than a standard administrative tool.
 
@@ -102,5 +102,5 @@ We reject the "drop shadow" of 2015. Elevation is achieved through **Tonal Layer
 - **Don't** use pure black (#000000). Use `on-background` (#191c1e) for text to maintain a premium "ink on paper" feel.
 - **Don't** use standard 4px or 8px border-radii. Anything under 12px feels "legacy" in this system.
 - **Don't** use high-contrast dividers. If you can see the line from 5 feet away, it’s too dark.
-- **Don't** crowd the data. If a practice manager is overwhelmed, the design has failed the "Clinical Curator" ethos.
+- **Don't** crowd the data. If a practice manager is overwhelmed, the design has failed the "Recally" ethos.
 ```

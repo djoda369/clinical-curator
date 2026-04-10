@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Clinical Curator",
+  title: "Recally",
   description:
-    "Clinic revenue and operations automation that reactivates inactive patients, rescues missed appointments, and reduces manual follow-up.",
+    "Retention and revenue automation for health, beauty, and care businesses that reactivates inactive clients, rescues missed bookings, and reduces manual follow-up.",
 };
 
 const plusJakartaSans = Plus_Jakarta_Sans({

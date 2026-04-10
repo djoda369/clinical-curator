@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const footerLinks = [
   { label: "Platform", href: "/" },
-  { label: "Operations", href: "/operations" },
+  { label: "Features", href: "/operations" },
   { label: "Privacy", href: "#" },
 ];
 
@@ -80,7 +80,7 @@ export function Footer() {
               href="/"
               className="font-display text-lg font-bold tracking-tight text-slate-900"
             >
-              Clinical Curator
+              Recally
             </Link>
           </div>
 
@@ -99,12 +99,12 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-200/50 pt-8 md:flex-row">
           <p className="text-sm tracking-wide text-slate-500">
-            © 2026 Clinical Curator. All rights reserved.
+            © 2026 Recally. All rights reserved.
           </p>
 
           <div className="flex gap-6">
             <a
-              href="mailto:?subject=Clinical%20Curator"
+              href="mailto:?subject=Recally"
               className="text-slate-400 transition-colors hover:text-blue-500"
             >
               <ShareIcon />

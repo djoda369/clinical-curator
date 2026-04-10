@@ -1,5 +1,7 @@
 Da — iz ovog fajla bih za landing page i budući copy **zadržao samo offer sloj**, bez MVP, call-validacije i internih razmišljanja. Suština ti je da ne prodaješ “CRM”, “campaign builder” ili “workflow tool”, nego **revenue + operations system za klinike** koji vraća stare pacijente, spašava propuštene prilike i smanjuje ručni follow-up za staff.
 
+Brand name za copy i positioning treba da bude: **Recally**.
+
 ## 1. Core offer
 
 Tvoj offer, sveden na najčistiju formu, glasi:

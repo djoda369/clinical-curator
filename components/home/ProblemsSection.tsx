@@ -1,8 +1,8 @@
 const problems = [
   {
-    title: "Inactive patients",
+    title: "Inactive clients",
     description:
-      "Patients who disappear for 6+ months rarely come back consistently unless someone follows up with a repeatable process.",
+      "Clients who disappear for too long rarely come back consistently unless someone follows up with a repeatable process.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -23,7 +23,7 @@ const problems = [
   {
     title: "Cancellations that vanish",
     description:
-      "Every canceled appointment that is not rescued quickly turns open schedule time into lost revenue.",
+      "Every canceled booking that is not rescued quickly turns open schedule time into lost revenue.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ const problems = [
   {
     title: "No-shows with no rescue flow",
     description:
-      "Without immediate rebooking outreach, empty chair time stays empty instead of turning back into booked care.",
+      "Without immediate rebooking outreach, empty schedule time stays empty instead of turning back into booked business.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -96,11 +96,11 @@ export function ProblemsSection() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-            Your clinic is already sitting on recoverable revenue.
+            Your business is already sitting on recoverable revenue.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground-muted">
-            It leaks out when past patients stay inactive, canceled appointments
-            are not rescued, and follow-up depends on whoever has time that day.
+            It leaks out when past clients stay inactive, canceled bookings are
+            not rescued, and follow-up depends on whoever has time that day.
           </p>
           <div className="mx-auto mt-4 h-1.5 w-24 rounded-full bg-primary" />
         </div>
