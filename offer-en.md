@@ -1,7 +1,7 @@
 Offer Brief
 Brand Name
 
-Recally
+Recally Flow
 
 Core Offer
 

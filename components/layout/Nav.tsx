@@ -63,12 +63,12 @@ export function Nav() {
               onClick={() => setMobileOpen(false)}
             >
               <Image
-                src="/Recally_Logo.png"
+                src="/RecallyFlow_Logo_transparent.png"
                 alt="Recally"
-                width={320}
+                width={80}
                 height={96}
                 priority
-                className="h-12 w-auto md:h-14 scale-250"
+                className="h-8 w-auto md:h-10"
               />
             </Link>
           </div>
