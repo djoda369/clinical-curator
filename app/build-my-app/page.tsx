@@ -160,7 +160,8 @@ const footerLinks = [
   { label: "Schedule a Call", href: "/build-my-app#booking" },
 ];
 
-const calendlyEventUrl = "https://calendly.com/djordje-stankovic-priv/30min";
+const calendlyEventUrl =
+  "https://calendly.com/djordje-recallyflow/strategy-call";
 
 function BrandIcon() {
   return (
@@ -225,8 +226,8 @@ export default function BuildMyAppPage() {
                 <p className="max-w-xl text-xl leading-relaxed text-foreground-muted">
                   Book a 30-minute planning call to walk through how your
                   business handles client reactivation, return reminders, and
-                  missed bookings today. We&apos;ll map the recovery opportunities
-                  worth solving first.
+                  missed bookings today. We&apos;ll map the recovery
+                  opportunities worth solving first.
                 </p>
               </div>
 
