@@ -2,14 +2,14 @@ import Link from "next/link";
 
 const metrics = [
   {
-    label: "Recovered Bookings",
-    description: "Tracked from booking data",
+    label: "Recovered appointments",
+    description: "Track from booking data",
     width: "w-3/4",
     valueClassName: "text-primary",
   },
   {
-    label: "Returning Clients",
-    description: "Verified before publish",
+    label: "Filled empty slots",
+    description: "Rescue same-day demand",
     width: "w-1/2",
     valueClassName: "text-foreground",
   },
@@ -25,18 +25,19 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
         <div className="relative z-10">
           <span className="inline-block rounded-full bg-surface-container px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-on-secondary-container">
-            Retention &amp; Revenue Automation
+            Missed Revenue Recovery System
           </span>
 
           <h1 className="mb-8 mt-6 max-w-4xl font-display text-5xl font-extrabold leading-[1.05] tracking-tight text-foreground md:text-7xl">
-            Recover lost revenue{" "}
+            Recover missed revenue{" "}
             <span className="text-primary">without additional work</span>
           </h1>
 
           <p className="mb-10 max-w-xl text-xl leading-relaxed text-foreground-muted">
-            Recally helps health, beauty, and care businesses automatically
-            bring back inactive clients, rescue canceled and missed bookings,
-            and reduce manual follow-up using the client base you already have.
+            Recally Flow helps appointment-based healthcare and beauty
+            practices bring back inactive patients or clients, reduce
+            no-shows, reward repeat visits, and refill canceled slots using
+            the database they already have.
           </p>
 
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-center">
@@ -44,14 +45,14 @@ export function Hero() {
               href="/build-my-app"
               className="bg-primary-gradient shadow-ambient w-full rounded-full px-8 py-4 text-center text-lg font-bold text-primary-foreground transition-all active:scale-95 sm:w-auto"
             >
-              Find Recoverable Revenue
+              Find Missed Revenue
             </Link>
 
             <Link
               href="/#recovery-workflows"
               className="group flex items-center gap-2 font-semibold text-foreground transition-colors hover:text-primary"
             >
-              <span>See Recovery Workflows</span>
+              <span>See Revenue Recovery Workflows</span>
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -113,8 +114,8 @@ export function Hero() {
                     Dashboard Preview
                   </p>
                   <p className="mt-2 font-display text-2xl text-foreground">
-                    Recovery workflows are turning missed opportunities into
-                    repeat bookings.
+                    Revenue recovery is turning missed follow-up into booked
+                    appointments.
                   </p>
                 </div>
                 <span className="rounded-full bg-tertiary-fixed px-3 py-1 text-sm font-medium text-on-tertiary-fixed">
@@ -150,7 +151,7 @@ export function Hero() {
                   <div className="mt-4 space-y-3">
                     <div className="rounded-lg bg-surface-container-low px-3 py-3">
                       <p className="text-sm text-foreground">
-                        Inactive clients
+                        Inactive patients or clients
                       </p>
                       <p className="mt-1 font-semibold text-primary">
                         Ready to reengage
@@ -158,10 +159,10 @@ export function Hero() {
                     </div>
                     <div className="rounded-lg bg-surface-container-low px-3 py-3">
                       <p className="text-sm text-foreground">
-                        Canceled bookings
+                        Last-minute openings
                       </p>
                       <p className="mt-1 font-semibold text-foreground">
-                        Ready to rebook
+                        Ready to refill
                       </p>
                     </div>
                   </div>

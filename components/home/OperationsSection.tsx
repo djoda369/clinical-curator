@@ -1,8 +1,8 @@
 const capabilities = [
   {
-    title: "Team tasking",
+    title: "Staff tasking",
     description:
-      "Route only the follow-up tasks that need a person instead of forcing your team to chase every opportunity manually.",
+      "Route only the follow-up tasks that need a person instead of forcing the front desk to chase every opportunity manually.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -22,9 +22,9 @@ const capabilities = [
     ),
   },
   {
-    title: "Workflow visibility",
+    title: "Recovery visibility",
     description:
-      "See what is bringing clients back, what still needs intervention, and where repeat-booking momentum is building inside daily workflows.",
+      "See what is rebooking appointments, what still needs intervention, and where revenue recovery is building inside daily workflows.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -44,7 +44,7 @@ const capabilities = [
   {
     title: "Role-based coordination",
     description:
-      "Keep your team, managers, and service staff aligned on one recovery process with clear ownership and fewer missed handoffs.",
+      "Keep your team, managers, and service staff aligned on one revenue recovery process with clear ownership and fewer missed handoffs.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -76,10 +76,10 @@ export function OperationsSection() {
               <div className="mb-6 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground-muted">
-                    Retention workflow layer
+                    Revenue recovery layer
                   </p>
                   <h3 className="mt-2 font-display text-2xl text-foreground">
-                    Your team and your follow-up finally work as one system.
+                    Your front desk and follow-up finally work as one system.
                   </h3>
                 </div>
                 <span className="rounded-full bg-tertiary-fixed px-3 py-1 text-sm font-medium text-on-tertiary-fixed">
@@ -105,7 +105,7 @@ export function OperationsSection() {
                     </p>
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-sm text-foreground">
-                        Bookings ready
+                        Patients and clients ready
                       </span>
                       <span className="font-semibold text-primary">
                         Prioritized
@@ -121,7 +121,7 @@ export function OperationsSection() {
                       <div className="flex items-center justify-between rounded-lg bg-surface-container px-3 py-2">
                         <span className="text-sm text-foreground">Team</span>
                         <span className="text-sm font-medium text-foreground">
-                          Tasked only when needed
+                          Tasked only when automation stalls
                         </span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-surface-container px-3 py-2">
@@ -146,10 +146,10 @@ export function OperationsSection() {
               <div className="h-10 w-10 rounded-full bg-slate-200" />
               <div>
                 <p className="text-xs font-bold text-foreground">
-                  Recally
+                  Recally Flow
                 </p>
                 <p className="text-[10px] uppercase text-foreground-muted">
-                  Retention workflow layer
+                  Revenue recovery layer
                 </p>
               </div>
             </div>
@@ -158,12 +158,13 @@ export function OperationsSection() {
 
         <div>
           <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-            More than messaging. It is a retention workflow layer for
-            businesses that depend on repeat bookings.
+            More than messaging. It is a revenue recovery operating layer for
+            practices that depend on repeat appointments.
           </h2>
           <p className="mb-12 text-xl text-foreground-muted">
-            The platform connects reactivation, team tasks, and performance
-            visibility so recovery becomes part of the daily workflow.
+            The platform connects reactivation, loyalty, slot rescue, team
+            tasks, and performance visibility so recovery becomes part of the
+            daily workflow.
           </p>
 
           <div className="space-y-10">

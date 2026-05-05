@@ -1,9 +1,9 @@
 const steps = [
   {
     number: "01",
-    title: "Connect",
+    title: "Recover",
     description:
-      "Connect your client and booking data and define the client groups you want to recover first.",
+      "Reactivate inactive patients or clients, overdue recalls, and missed follow-up opportunities already sitting in your database.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -26,9 +26,9 @@ const steps = [
   },
   {
     number: "02",
-    title: "Identify",
+    title: "Retain",
     description:
-      "We identify inactive clients, missed bookings, and overdue follow-up opportunities ready for automation.",
+      "Use loyalty, attendance perks, and better reminder logic to protect repeat visits and encourage stronger appointment behavior.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -50,9 +50,9 @@ const steps = [
   },
   {
     number: "03",
-    title: "Launch",
+    title: "Refill",
     description:
-      "Turn on the first recovery flows and give your team clear next steps only where human follow-up is needed.",
+      "Promote canceled or last-minute openings to the right people before empty schedule time turns into zero revenue.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -81,11 +81,11 @@ export function StepsSection() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto mb-20 max-w-3xl text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground">
-            Launch your recovery system in 3 steps.
+            Recover. Retain. Refill.
           </h2>
           <p className="mt-6 text-foreground-muted">
-            Start with the recovery opportunities already in your data and go
-            live without a disruptive implementation.
+            Start with the revenue leaks already in your data, then layer on
+            the workflows that protect repeat visits and refill open time.
           </p>
         </div>
 

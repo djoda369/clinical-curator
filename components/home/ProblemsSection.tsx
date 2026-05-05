@@ -1,8 +1,8 @@
 const problems = [
   {
-    title: "Inactive clients",
+    title: "Inactive patients and clients",
     description:
-      "Clients who disappear for too long rarely come back consistently unless someone follows up with a repeatable process.",
+      "People who fall outside their expected return window rarely come back on their own unless someone follows up with a repeatable system.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -21,9 +21,9 @@ const problems = [
     ),
   },
   {
-    title: "Cancellations that vanish",
+    title: "No-shows waste booked time",
     description:
-      "Every canceled booking that is not rescued quickly turns open schedule time into lost revenue.",
+      "A missed appointment becomes lost revenue when nobody follows up quickly enough to rebook it or protect the next slot.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -45,9 +45,9 @@ const problems = [
     ),
   },
   {
-    title: "Follow-up with no system",
+    title: "Late cancellations create empty slots",
     description:
-      "When outreach depends on memory, spreadsheets, and whoever has time, recoverable opportunities slip through.",
+      "Last-minute changes leave schedule gaps behind unless the business can promote those openings to the right people fast.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -67,9 +67,9 @@ const problems = [
     ),
   },
   {
-    title: "No-shows with no rescue flow",
+    title: "Manual follow-up overload",
     description:
-      "Without immediate rebooking outreach, empty schedule time stays empty instead of turning back into booked business.",
+      "When outreach depends on memory, spreadsheets, and whoever has time that day, recoverable opportunities slip through.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -96,11 +96,12 @@ export function ProblemsSection() {
       <div className="mx-auto max-w-7xl">
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-            Your business is already sitting on recoverable revenue.
+            Your schedule is already leaking recoverable revenue.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-foreground-muted">
-            It leaks out when past clients stay inactive, canceled bookings are
-            not rescued, and follow-up depends on whoever has time that day.
+            It leaks out when inactive patients or clients do not come back,
+            no-shows and late cancellations create empty time, and follow-up
+            depends on whoever has capacity that day.
           </p>
           <div className="mx-auto mt-4 h-1.5 w-24 rounded-full bg-primary" />
         </div>

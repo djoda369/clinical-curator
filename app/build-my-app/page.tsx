@@ -3,9 +3,9 @@ import { Nav } from "@/components/layout/Nav";
 
 const benefitPillars = [
   {
-    title: "Recover missed revenue",
+    title: "Inactive patients or clients",
     description:
-      "Find inactive clients, missed bookings, and follow-up gaps already sitting in your database.",
+      "See how much revenue may be sitting in people who have not returned, missed follow-ups, or fallen outside their expected return window.",
     toneClassName: "bg-tertiary-fixed text-on-tertiary-fixed",
     icon: (
       <svg
@@ -24,9 +24,9 @@ const benefitPillars = [
     ),
   },
   {
-    title: "Reduce manual follow-up",
+    title: "No-shows & late cancellations",
     description:
-      "Show your team where automation should handle outreach and where staff should step in.",
+      "Measure how much booked time is being lost when appointments are missed, canceled late, or never recovered.",
     toneClassName: "bg-primary/10 text-primary",
     icon: (
       <svg
@@ -46,9 +46,9 @@ const benefitPillars = [
     ),
   },
   {
-    title: "Prioritize fast wins",
+    title: "Empty last-minute slots",
     description:
-      "Start with the highest-value recovery flows first, not a full system overhaul.",
+      "Find the openings that appear in your schedule and should be promoted to existing patients or clients before they disappear.",
     toneClassName: "bg-sky-100 text-sky-700",
     icon: (
       <svg
@@ -72,8 +72,8 @@ const benefitPillars = [
 
 const trustStats = [
   {
-    value: "Recovered Bookings",
-    label: "Use verified business data only",
+    value: "Estimated missed revenue",
+    label: "Focused on the leaks that matter first",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -92,8 +92,8 @@ const trustStats = [
     ),
   },
   {
-    value: "Rebooked Missed Bookings",
-    label: "Track from follow-up workflows",
+    value: "Fastest recovery opportunity",
+    label: "Prioritize the first workflow with the clearest return",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -114,8 +114,8 @@ const trustStats = [
     ),
   },
   {
-    value: "Team Time Saved",
-    label: "Measure against manual follow-up",
+    value: "Suggested first rollout",
+    label: "Leave with a practical next step, not a long wishlist",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -138,26 +138,26 @@ const roadmapSteps = [
     number: "01",
     title: "Current workflow review",
     description:
-      "We look at how inactive clients, cancellations, no-shows, and return reminders are handled today.",
+      "We look at how inactive patients or clients, cancellations, no-shows, and empty slots are handled today.",
   },
   {
     number: "02",
-    title: "Revenue opportunity mapping",
+    title: "Revenue leak mapping",
     description:
-      "We identify which client groups and follow-up flows can produce the fastest measurable return.",
+      "We identify which segments and follow-up flows can produce the fastest measurable return.",
   },
   {
     number: "03",
     title: "Recommended rollout",
     description:
-      "You leave with a practical first rollout focused on recovered bookings, recovered revenue, and team time saved.",
+      "You leave with the first campaign, first loyalty or slot-rescue flow, and the metrics worth tracking first.",
   },
 ];
 
 const footerLinks = [
   { label: "Privacy Policy", href: "#" },
   { label: "Terms of Service", href: "#" },
-  { label: "Schedule a Call", href: "/build-my-app#booking" },
+  { label: "Find Missed Revenue", href: "/build-my-app#booking" },
 ];
 
 const calendlyEventUrl =
@@ -218,15 +218,15 @@ export default function BuildMyAppPage() {
             <div className="space-y-12 lg:col-span-6">
               <div className="space-y-6">
                 <span className="inline-block rounded-full bg-surface-container px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-on-secondary-container">
-                  Find Recoverable Revenue
+                  Free Missed Revenue Audit
                 </span>
                 <h1 className="font-display text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground md:text-6xl">
-                  See where your recoverable revenue is hiding.
+                  Book your Free Missed Revenue Audit.
                 </h1>
                 <p className="max-w-xl text-xl leading-relaxed text-foreground-muted">
-                  Book a 30-minute planning call to walk through how your
-                  business handles client reactivation, return reminders, and
-                  missed bookings today. We&apos;ll map the recovery
+                  Book a 30-minute working session to uncover where inactive
+                  patients or clients, no-shows, cancellations, and empty
+                  slots are leaking revenue today. We&apos;ll map the recovery
                   opportunities worth solving first.
                 </p>
               </div>
@@ -261,13 +261,13 @@ export default function BuildMyAppPage() {
               <div className="rounded-[2rem] bg-surface-container-lowest p-8 shadow-[0_20px_40px_rgba(25,28,30,0.04)] ring-1 ring-outline-variant/10 md:p-10">
                 <h2 className="mb-8 flex items-center gap-3 font-display text-2xl font-bold text-foreground">
                   <CalendarIcon />
-                  Find your recoverable revenue
+                  Book your audit session
                 </h2>
                 <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground-muted">
-                  Choose a time that works for you. We&apos;ll review your
-                  current workflow, identify the highest-value recovery
-                  opportunities, and outline the right first version for your
-                  business.
+                  Choose a time that works for you. You&apos;ll leave with an
+                  estimate of missed revenue, the fastest recovery opportunity,
+                  the first campaign to launch, and the right loyalty or slot
+                  rescue flow to add next.
                 </p>
 
                 <div className="overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low">
@@ -317,11 +317,11 @@ export default function BuildMyAppPage() {
           <section id="roadmap" className="mt-32">
             <div className="mb-16 text-center">
               <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-                What happens on the call
+                What happens in your audit
               </h2>
               <p className="mt-4 text-foreground-muted">
-                We review your business setup together, identify the fastest
-                recovery opportunities, and define the best first rollout.
+                A short working session focused on the fastest recovery
+                opportunities, not a long implementation process.
               </p>
             </div>
 
@@ -353,7 +353,7 @@ export default function BuildMyAppPage() {
               <BrandIcon />
             </span>
             <span className="font-display text-sm font-semibold text-slate-800">
-              Recally
+              Recally Flow
             </span>
           </div>
 
@@ -370,7 +370,7 @@ export default function BuildMyAppPage() {
           </div>
 
           <p className="text-xs text-slate-500">
-            © 2026 Recally. All rights reserved.
+            © 2026 Recally Flow. All rights reserved.
           </p>
         </div>
       </footer>

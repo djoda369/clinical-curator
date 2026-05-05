@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Platform", href: "/" },
-  { label: "Functionality", href: "/operations" },
+  { label: "Overview", href: "/" },
+  { label: "Operations", href: "/operations" },
 ];
 
 function linkClassName(active: boolean) {
@@ -64,7 +64,7 @@ export function Nav() {
             >
               <Image
                 src="/RecallyFlow_Logo_transparent.png"
-                alt="Recally"
+                alt="Recally Flow"
                 width={80}
                 height={96}
                 priority
@@ -95,7 +95,7 @@ export function Nav() {
                   : "rounded-full bg-primary px-6 py-2.5 font-medium text-primary-foreground transition-all duration-200 hover:opacity-90 active:scale-95"
               }
             >
-              Find Recoverable Revenue
+              Find Missed Revenue
             </Link>
           </div>
 
@@ -166,7 +166,7 @@ export function Nav() {
                 }
                 onClick={() => setMobileOpen(false)}
               >
-                Find Recoverable Revenue
+                Find Missed Revenue
               </Link>
             </div>
           </div>

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const campaignChecks = [
-  "Segment by last booking, service, or return timing",
-  "Escalate to staff only when a client needs human follow-up",
+  "Segment by last booking, service, return window, or recall status",
+  "Escalate to staff only when a patient or client needs human follow-up",
 ];
 
 const stars = Array.from({ length: 5 });
@@ -65,12 +65,13 @@ export function SolutionsSection() {
         <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              A recovery system that fits into daily workflows.
+              Revenue recovery workflows that fit into daily operations.
             </h2>
             <p className="mt-6 text-xl text-foreground-muted">
-              Recally sits on top of your current workflow to automate
-              reactivation, return reminders, and rebooking while only handing
-              your team the tasks that actually need a person.
+              Recally Flow sits on top of your current workflow to automate
+              reactivation, loyalty and attendance incentives, and slot rescue
+              while only handing your team the tasks that actually need a
+              person.
             </p>
           </div>
 
@@ -78,7 +79,7 @@ export function SolutionsSection() {
             href="/#recovery-workflows"
             className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-8 py-3 font-bold text-surface transition-colors hover:bg-primary md:w-auto"
           >
-            Explore Recovery Workflows
+            See Revenue Recovery Workflows
           </Link>
         </div>
 
@@ -90,12 +91,12 @@ export function SolutionsSection() {
                   Primary use case
                 </span>
                 <h4 className="mb-4 text-3xl font-bold text-foreground">
-                  Inactive client reactivation
+                  Inactive patient and client reactivation
                 </h4>
                 <p className="mb-8 leading-relaxed text-foreground-muted">
-                  Automatically identify clients who have gone quiet and send
-                  staged SMS and email follow-up until they book again or need
-                  direct outreach from your team.
+                  Automatically identify patients or clients who have gone
+                  quiet and send staged SMS and email follow-up until they book
+                  again or need direct outreach from your team.
                 </p>
 
                 <ul className="space-y-4">
@@ -129,7 +130,7 @@ export function SolutionsSection() {
                       </p>
                       <div className="mt-3 space-y-2">
                         <div className="rounded-md bg-surface-container px-3 py-2 text-xs leading-snug text-foreground">
-                          Last booking past return window
+                          Past expected return window
                         </div>
                         <div className="rounded-md bg-surface-container px-3 py-2 text-xs leading-snug text-foreground">
                           No future booking scheduled
@@ -177,13 +178,14 @@ export function SolutionsSection() {
 
           <article className="rounded-xl bg-primary p-10 text-primary-foreground shadow-xl md:col-span-4">
             <span className="mb-4 block text-sm font-bold uppercase tracking-[0.2em] text-blue-100">
-              Supporting flow
+              Retain
             </span>
             <h4 className="mb-4 text-3xl font-bold">
-              Return booking reminders
+              Loyalty &amp; attendance perks
             </h4>
             <p className="leading-relaxed text-blue-100/90">
-              Keep overdue return reminders from becoming lost revenue.
+              Encourage repeat visits and better appointment behavior with
+              rewards that feel premium instead of punitive.
             </p>
 
             <div className="mt-12 rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
@@ -201,22 +203,22 @@ export function SolutionsSection() {
 
           <article className="rounded-xl bg-surface-container-high p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Missed booking recovery
+              No-show recovery
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Trigger same-day rebooking outreach after missed bookings so open
-              slots do not stay empty.
+              Trigger same-day rebooking outreach after missed appointments so
+              booked time does not stay lost.
             </p>
             <SyncProblemIcon />
           </article>
 
           <article className="shadow-ambient rounded-xl bg-surface-container-lowest p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Canceled booking rescue
+              Canceled appointment rescue
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Re-engage clients who cancel before the booking disappears for
-              good.
+              Re-engage people who cancel before that appointment turns into an
+              unrecovered schedule gap.
             </p>
             <div className="flex gap-2">
               <span className="rounded-full bg-tertiary-fixed px-3 py-1 text-[10px] font-bold text-on-tertiary-fixed">
@@ -227,11 +229,11 @@ export function SolutionsSection() {
 
           <article className="shadow-ambient rounded-xl bg-surface-container-lowest p-10 md:col-span-4">
             <h4 className="mb-4 text-2xl font-bold text-foreground">
-              Post-service follow-up
+              Last-minute slot refill
             </h4>
             <p className="mb-6 text-foreground-muted">
-              Send timely follow-up after services so clients stay engaged
-              without adding admin work.
+              Promote newly opened slots to the right segment before empty time
+              turns into lost revenue.
             </p>
             <div className="flex items-center gap-1">
               {stars.map((_, index) => (

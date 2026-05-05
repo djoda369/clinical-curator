@@ -3,33 +3,33 @@ import { Footer } from "@/components/layout/Footer";
 import { Nav } from "@/components/layout/Nav";
 
 export const metadata: Metadata = {
-  title: "Features — Recally",
+  title: "Operations — Recally Flow",
   description:
-    "Campaign templates, recovery workflows, scheduling controls, and team coordination for better booking follow-up.",
+    "Revenue recovery workflows, slot rescue controls, and team coordination for appointment-based practices.",
 };
 
 const campaignsAndTemplates = [
   {
-    kind: "Template",
-    title: "Inactive client reactivation",
-    detail: "Email + SMS · 4 touchpoints",
-    statusLabel: "In use",
+    kind: "Recover",
+    title: "Reactivation & recall flows",
+    detail: "Inactive, overdue, and missed follow-up segments",
+    statusLabel: "Core",
     statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
     kindClass: "bg-tertiary/10 text-tertiary",
   },
   {
-    kind: "Campaign",
-    title: "Return reminder & rebooking push",
-    detail: "Audience from queue · 3-step sequence",
-    statusLabel: "Running",
-    statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
+    kind: "Retain",
+    title: "Loyalty & attendance perks",
+    detail: "Repeat visits + stronger appointment behavior",
+    statusLabel: "Live",
+    statusClass: "bg-primary/10 text-primary",
     kindClass: "bg-primary/10 text-primary",
   },
   {
-    kind: "Template",
-    title: "Canceled booking rescue",
-    detail: "SMS sequence · editable copy",
-    statusLabel: "Live",
+    kind: "Refill",
+    title: "Slot rescue automation",
+    detail: "Cancellations, no-shows, and last-minute openings",
+    statusLabel: "Ready",
     statusClass: "bg-tertiary-fixed text-on-tertiary-fixed",
     kindClass: "bg-tertiary/10 text-tertiary",
   },
@@ -37,28 +37,28 @@ const campaignsAndTemplates = [
 
 const operationsControls = [
   {
-    title: "Scheduling",
+    title: "Availability & slot rules",
     description:
-      "Keep calendars, availability windows, and booking rules aligned with the demand your recovery flows generate.",
+      "Keep calendars, availability windows, and booking rules aligned with the demand your recovery workflows generate.",
   },
   {
-    title: "Team management",
+    title: "Task ownership",
     description:
-      "Organize staff availability and responsibilities so follow-up, booking, and day-to-day workflows stay coordinated.",
+      "Organize responsibilities so follow-up, booking, and day-to-day recovery workflows stay coordinated.",
   },
   {
-    title: "Services",
+    title: "Service alignment",
     description:
-      "Define the services, durations, and booking constraints you want clients to see before they land on the wrong slot.",
+      "Match open slots and reminder logic to the services, durations, and booking constraints that matter most.",
   },
 ] as const;
 
 const recoveryFlows = [
   {
-    title: "Inactive Client Reactivation",
-    status: "Clients ready",
+    title: "Inactive Patient & Client Reactivation",
+    status: "Recover",
     description:
-      "Automatically stages outreach for clients who have gone quiet until they book or need staff attention.",
+      "Stage outreach for people who have gone quiet until they rebook or need staff attention.",
     iconWrap: "bg-blue-50 text-blue-600",
     icon: (
       <svg
@@ -79,10 +79,10 @@ const recoveryFlows = [
     ),
   },
   {
-    title: "Canceled Booking Rescue",
-    status: "Bookings ready",
+    title: "Loyalty & Attendance Incentives",
+    status: "Retain",
     description:
-      "Re-engages canceled bookings quickly so open slots have a better chance of being rebooked before they disappear.",
+      "Protect repeat visits and improve appointment behavior with perks that reward consistency and early changes.",
     iconWrap: "bg-green-50 text-green-600",
     icon: (
       <svg
@@ -95,19 +95,15 @@ const recoveryFlows = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <path d="M8 4.75v3.5" />
-        <path d="M16 4.75v3.5" />
-        <rect x="4.75" y="6.75" width="14.5" height="12.5" rx="2" />
-        <path d="M4.75 11h14.5" />
-        <path d="m9 15 2 2 4-4" />
+        <path d="m12 3.5 2.2 4.46 4.93.72-3.57 3.48.84 4.91L12 14.75l-4.4 2.32.84-4.91L4.87 8.68l4.93-.72L12 3.5Z" />
       </svg>
     ),
   },
   {
-    title: "No-show Recovery",
-    status: "Same-day queue",
+    title: "Cancellation & Slot Rescue",
+    status: "Refill",
     description:
-      "Triggers same-day follow-up and hands staff only the exceptions that genuinely need a person to intervene.",
+      "Trigger same-day outreach when time opens up so cancellations and no-shows can turn back into booked appointments.",
     iconWrap: "bg-purple-50 text-purple-600",
     icon: (
       <svg
@@ -151,10 +147,10 @@ export default function OperationsPage() {
         <div className="mx-auto max-w-7xl space-y-10 lg:space-y-12">
           <section className="space-y-3">
             <span className="block text-[11px] font-medium uppercase tracking-widest text-foreground-muted">
-              Feature Overview
+              Operations Layer
             </span>
             <h1 className="max-w-4xl font-display text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-              Features built to recover revenue without more manual follow-up.
+              Operations that recover revenue without more manual follow-up.
             </h1>
           </section>
 
@@ -162,19 +158,19 @@ export default function OperationsPage() {
             <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <h2 className="font-display text-2xl font-bold text-foreground">
-                  Campaigns &amp; templates
+                  Recover. Retain. Refill.
                 </h2>
                 <p className="mt-1 max-w-xl text-sm text-foreground-muted">
-                  Reusable message templates and the campaigns that send
-                  them—built for retention workflows, not generic
-                  marketing blasts.
+                  The operating model is built around reactivation and recall,
+                  loyalty and attendance incentives, and fast slot rescue when
+                  bookings fall out.
                 </p>
               </div>
               <button
                 type="button"
                 className="flex shrink-0 items-center gap-1 text-sm font-semibold text-primary"
               >
-                Manage templates <ChevronRightIcon className="h-4 w-4" />
+                See workflow logic <ChevronRightIcon className="h-4 w-4" />
               </button>
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -195,18 +191,15 @@ export default function OperationsPage() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                        {item.kind === "Campaign" ? (
+                        {item.kind === "Retain" ? (
+                          <>
+                            <path d="m12 3.5 2.2 4.46 4.93.72-3.57 3.48.84 4.91L12 14.75l-4.4 2.32.84-4.91L4.87 8.68l4.93-.72L12 3.5Z" />
+                          </>
+                        ) : (
                           <>
                             <path d="M4 19V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14" />
                             <path d="M8 7h8" />
                             <path d="M8 11h5" />
-                          </>
-                        ) : (
-                          <>
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <path d="M14 2v6h6" />
-                            <path d="M8 13h8" />
-                            <path d="M8 17h6" />
                           </>
                         )}
                       </svg>
@@ -275,12 +268,12 @@ export default function OperationsPage() {
                 Daily workflows
               </h3>
               <h2 className="max-w-3xl font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-                Run bookings, team coordination, and service setup from one
-                workflow layer.
+                Keep booking rules, task ownership, and slot rescue aligned
+                from one workflow layer.
               </h2>
               <p className="mt-3 max-w-3xl text-sm leading-relaxed text-foreground-muted md:text-base">
                 Keep the systems behind booking organized so your recovery
-                campaigns connect to real availability, the right team members,
+                workflows connect to real availability, the right team members,
                 and the right services without extra manual cleanup.
               </p>
 

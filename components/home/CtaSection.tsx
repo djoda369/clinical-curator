@@ -17,13 +17,12 @@ export function CtaSection() {
 
         <div className="relative z-10">
           <h2 className="mb-8 text-4xl font-extrabold md:text-6xl">
-            Turn your existing client base into repeat bookings.
+            Book your Free Missed Revenue Audit.
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-blue-100">
-            See which inactive clients, missed bookings, and follow-up
-            opportunities you can recover first. We&apos;ll map the best starting
-            flows and show how the experience can work for both clients and
-            staff.
+            We&apos;ll show you where inactive patients or clients, missed
+            appointments, cancellations, and empty slots are leaking revenue
+            and which recovery workflows are worth launching first.
           </p>
 
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
@@ -31,13 +30,13 @@ export function CtaSection() {
               href="/build-my-app"
               className="rounded-full bg-white px-10 py-5 text-xl font-bold text-primary shadow-xl transition-all hover:scale-105 active:scale-95"
             >
-              Find Recoverable Revenue
+              Find Missed Revenue
             </Link>
             <Link
-              href="/build-my-app#roadmap"
+              href="/#recovery-workflows"
               className="rounded-full border-2 border-white/30 px-10 py-5 text-xl font-bold text-white transition-all hover:bg-white/10"
             >
-              See the Recovery Process
+              See Revenue Recovery Workflows
             </Link>
           </div>
         </div>

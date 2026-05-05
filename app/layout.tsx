@@ -9,9 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Recally",
+  title: "Recally Flow",
   description:
-    "Retention and revenue automation for health, beauty, and care businesses that reactivates inactive clients, rescues missed bookings, and reduces manual follow-up.",
+    "Missed revenue recovery for appointment-based healthcare and beauty practices through reactivation, loyalty, slot rescue, and lower manual follow-up.",
+  icons: {
+    icon: [{ url: "/Favicon_Recally_Flow.png", type: "image/png" }],
+    shortcut: [{ url: "/Favicon_Recally_Flow.png", type: "image/png" }],
+  },
 };
 
 const plusJakartaSans = Plus_Jakarta_Sans({
