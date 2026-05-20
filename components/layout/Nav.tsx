@@ -6,8 +6,11 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Overview", href: "/" },
+  { label: "Overview", href: "/med-spa" },
   { label: "Operations", href: "/operations" },
+  // { label: "Overview", href: "/" },
+  // { label: "Dental", href: "/dental" },
+  // { label: "Salons", href: "/salons" },
 ];
 
 function linkClassName(active: boolean) {
@@ -16,13 +19,40 @@ function linkClassName(active: boolean) {
     : "py-1 text-sm tracking-wide text-slate-600 transition-colors hover:text-primary";
 }
 
+function isActivePath(pathname: string | null, href: string) {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname?.startsWith(href) ?? false;
+}
+
+function auditHrefForPath(pathname: string | null) {
+  if (pathname === "/missed-revenue-snapshot") {
+    return "/build-my-app?vertical=med-spa&source=snapshot";
+  }
+
+  if (pathname === "/med-spa") {
+    return "/build-my-app?vertical=med-spa";
+  }
+
+  if (pathname === "/dental") {
+    return "/build-my-app?vertical=dental";
+  }
+
+  if (pathname === "/salons") {
+    return "/build-my-app?vertical=salons";
+  }
+
+  return "/build-my-app";
+}
+
 export function Nav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const isHomePage = pathname === "/";
   const isBuildMyAppPage = pathname?.startsWith("/build-my-app");
-  const isOperationsPage = pathname?.startsWith("/operations");
+  const auditHref = auditHrefForPath(pathname);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -58,7 +88,7 @@ export function Nav() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-2">
             <Link
-              href="/"
+              href="/med-spa"
               className="flex items-center"
               onClick={() => setMobileOpen(false)}
             >
@@ -73,22 +103,19 @@ export function Nav() {
             </Link>
           </div>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className={linkClassName(
-                  (isHomePage && item.href === "/") ||
-                    (isOperationsPage && item.href === "/operations"),
-                )}
+                className={linkClassName(isActivePath(pathname, item.href))}
               >
                 {item.label}
               </Link>
             ))}
 
             <Link
-              href="/build-my-app"
+              href={auditHref}
               className={
                 isBuildMyAppPage
                   ? "rounded-full bg-primary-container px-6 py-2.5 font-medium text-primary-foreground ring-2 ring-primary/20 transition-all duration-200"
@@ -147,8 +174,7 @@ export function Nav() {
                   key={item.label}
                   href={item.href}
                   className={`rounded-lg px-3 py-3 ${
-                    (isHomePage && item.href === "/") ||
-                    (isOperationsPage && item.href === "/operations")
+                    isActivePath(pathname, item.href)
                       ? "bg-primary/10 font-semibold text-primary"
                       : "text-slate-600 hover:bg-surface-container"
                   }`}
@@ -158,7 +184,7 @@ export function Nav() {
                 </Link>
               ))}
               <Link
-                href="/build-my-app"
+                href={auditHref}
                 className={
                   isBuildMyAppPage
                     ? "mt-2 rounded-full bg-primary-container px-6 py-3 text-center font-medium text-primary-foreground ring-2 ring-primary/20"

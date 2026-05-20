@@ -1,70 +1,19 @@
-const capabilities = [
-  {
-    title: "Staff tasking",
-    description:
-      "Route only the follow-up tasks that need a person instead of forcing the front desk to chase every opportunity manually.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="9" cy="8" r="3" />
-        <circle cx="17" cy="10" r="2.5" />
-        <path d="M3.5 18a5.5 5.5 0 0 1 11 0" />
-        <path d="M14 18a4 4 0 0 1 6.5-3.1" />
-      </svg>
-    ),
-  },
-  {
-    title: "Recovery visibility",
-    description:
-      "See what is rebooking appointments, what still needs intervention, and where revenue recovery is building inside daily workflows.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M14.5 4.5a4 4 0 0 1 5 5L10 19l-5 1 1-5 8.5-8.5Z" />
-        <path d="m13 6 5 5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Role-based coordination",
-    description:
-      "Keep your team, managers, and service staff aligned on one revenue recovery process with clear ownership and fewer missed handoffs.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 3.75 18.5 6v5.5c0 4.12-2.63 7.9-6.5 9-3.87-1.1-6.5-4.88-6.5-9V6L12 3.75Z" />
-        <path d="M9.5 11.5V10a2.5 2.5 0 1 1 5 0v1.5" />
-        <rect x="8.5" y="11.5" width="7" height="5" rx="1.2" />
-      </svg>
-    ),
-  },
-];
+import type { OperationsSectionCopy } from "@/content/verticals/types";
+import { LandingIcon } from "./LandingIcon";
 
-export function OperationsSection() {
+function toneClassName(tone: "primary" | "tertiary" | "foreground") {
+  if (tone === "primary") {
+    return "text-primary";
+  }
+
+  if (tone === "tertiary") {
+    return "text-tertiary";
+  }
+
+  return "text-foreground";
+}
+
+export function OperationsSection({ copy }: { copy: OperationsSectionCopy }) {
   return (
     <section className="overflow-hidden px-6 py-24 md:px-10 lg:px-0">
       <div className="mx-auto grid max-w-7xl items-center gap-20 lg:grid-cols-2">
@@ -76,14 +25,14 @@ export function OperationsSection() {
               <div className="mb-6 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground-muted">
-                    Revenue recovery layer
+                    {copy.panelEyebrow}
                   </p>
                   <h3 className="mt-2 font-display text-2xl text-foreground">
-                    Your front desk and follow-up finally work as one system.
+                    {copy.panelTitle}
                   </h3>
                 </div>
                 <span className="rounded-full bg-tertiary-fixed px-3 py-1 text-sm font-medium text-on-tertiary-fixed">
-                  Visible
+                  {copy.panelStatus}
                 </span>
               </div>
 
@@ -101,11 +50,11 @@ export function OperationsSection() {
                 <div className="space-y-3">
                   <div className="rounded-xl bg-surface-container-low p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">
-                      Recovery queue
+                      {copy.queueLabel}
                     </p>
                     <div className="mt-3 flex items-center justify-between">
                       <span className="text-sm text-foreground">
-                        Patients and clients ready
+                        {copy.queueValue}
                       </span>
                       <span className="font-semibold text-primary">
                         Prioritized
@@ -115,21 +64,26 @@ export function OperationsSection() {
 
                   <div className="rounded-xl bg-surface-container-low p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">
-                      Team handoff
+                      {copy.handoffLabel}
                     </p>
                     <div className="mt-3 space-y-2">
-                      <div className="flex items-center justify-between rounded-lg bg-surface-container px-3 py-2">
-                        <span className="text-sm text-foreground">Team</span>
-                        <span className="text-sm font-medium text-foreground">
-                          Tasked only when automation stalls
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between rounded-lg bg-surface-container px-3 py-2">
-                        <span className="text-sm text-foreground">Performance</span>
-                        <span className="text-sm font-medium text-tertiary">
-                          Visible daily
-                        </span>
-                      </div>
+                      {copy.handoffItems.map((item) => (
+                        <div
+                          key={item.label}
+                          className="flex items-center justify-between rounded-lg bg-surface-container px-3 py-2"
+                        >
+                          <span className="text-sm text-foreground">
+                            {item.label}
+                          </span>
+                          <span
+                            className={`text-sm font-medium ${toneClassName(
+                              item.tone,
+                            )}`}
+                          >
+                            {item.value}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -139,17 +93,16 @@ export function OperationsSection() {
 
           <div className="absolute -bottom-8 -right-4 z-20 max-w-[280px] rounded-xl border-l-4 border-tertiary bg-surface-container-lowest p-8 shadow-[0_20px_40px_rgba(25,28,30,0.08)]">
             <p className="mb-4 text-sm italic leading-relaxed text-foreground">
-              Give your team a repeatable system for follow-up instead of
-              relying on memory, manual lists, and missed handoffs.
+              {copy.quote}
             </p>
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-full bg-slate-200" />
               <div>
                 <p className="text-xs font-bold text-foreground">
-                  Recally Flow
+                  {copy.quoteBrand}
                 </p>
                 <p className="text-[10px] uppercase text-foreground-muted">
-                  Revenue recovery layer
+                  {copy.quoteKicker}
                 </p>
               </div>
             </div>
@@ -158,20 +111,15 @@ export function OperationsSection() {
 
         <div>
           <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
-            More than messaging. It is a revenue recovery operating layer for
-            practices that depend on repeat appointments.
+            {copy.heading}
           </h2>
-          <p className="mb-12 text-xl text-foreground-muted">
-            The platform connects reactivation, loyalty, slot rescue, team
-            tasks, and performance visibility so recovery becomes part of the
-            daily workflow.
-          </p>
+          <p className="mb-12 text-xl text-foreground-muted">{copy.body}</p>
 
           <div className="space-y-10">
-            {capabilities.map((capability) => (
+            {copy.capabilities.map((capability) => (
               <div key={capability.title} className="flex gap-6">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-surface-container text-primary">
-                  {capability.icon}
+                  <LandingIcon name={capability.icon} />
                 </div>
                 <div>
                   <h4 className="mb-2 text-xl font-bold text-foreground">

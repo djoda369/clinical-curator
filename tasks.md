@@ -35,3 +35,9 @@ profil napraviti kao lazin/gligin
 kada pravim druge profile: varijacije u headline i about sekcije, da bude isto ali da nije isti tekst
 
 profili do 100 konckcija, pocinjes sa 5. povecavas za 5 svake nedelje. do 17-18 max.
+
+part 3
+
+Napraviti google sheet koji ce da ima sve KPI funela
+
+sales navigator/engagment based

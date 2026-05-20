@@ -1,6 +1,7 @@
 import Link from "next/link";
+import type { CtaSectionCopy } from "@/content/verticals/types";
 
-export function CtaSection() {
+export function CtaSection({ copy }: { copy: CtaSectionCopy }) {
   return (
     <section className="px-6 py-20 md:px-10">
       <div className="bg-primary-gradient relative mx-auto max-w-5xl overflow-hidden rounded-[3rem] p-12 text-center text-primary-foreground shadow-[0_30px_80px_rgba(0,88,190,0.28)] md:p-24">
@@ -17,26 +18,24 @@ export function CtaSection() {
 
         <div className="relative z-10">
           <h2 className="mb-8 text-4xl font-extrabold md:text-6xl">
-            Book your Free Missed Revenue Audit.
+            {copy.heading}
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-blue-100">
-            We&apos;ll show you where inactive patients or clients, missed
-            appointments, cancellations, and empty slots are leaking revenue
-            and which recovery workflows are worth launching first.
+            {copy.body}
           </p>
 
           <div className="flex flex-col items-center justify-center gap-6 sm:flex-row">
             <Link
-              href="/build-my-app"
+              href={copy.primaryCta.href}
               className="rounded-full bg-white px-10 py-5 text-xl font-bold text-primary shadow-xl transition-all hover:scale-105 active:scale-95"
             >
-              Find Missed Revenue
+              {copy.primaryCta.label}
             </Link>
             <Link
-              href="/#recovery-workflows"
+              href={copy.secondaryCta.href}
               className="rounded-full border-2 border-white/30 px-10 py-5 text-xl font-bold text-white transition-all hover:bg-white/10"
             >
-              See Revenue Recovery Workflows
+              {copy.secondaryCta.label}
             </Link>
           </div>
         </div>

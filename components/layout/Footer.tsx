@@ -1,10 +1,13 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "Overview", href: "/" },
+  { label: "Med Spa", href: "/med-spa" },
   { label: "Operations", href: "/operations" },
   { label: "Free Audit", href: "/build-my-app" },
   { label: "Privacy", href: "#" },
+  // { label: "Overview", href: "/" },
+  // { label: "Dental", href: "/dental" },
+  // { label: "Salons", href: "/salons" },
 ];
 
 function BrandIcon() {

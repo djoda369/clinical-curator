@@ -1,167 +1,33 @@
+import type { Metadata } from "next";
 import Script from "next/script";
+import { LandingIcon } from "@/components/home/LandingIcon";
 import { Nav } from "@/components/layout/Nav";
+import { getAuditPageCopy } from "@/content/verticals";
 
-const benefitPillars = [
-  {
-    title: "Inactive patients or clients",
-    description:
-      "See how much revenue may be sitting in people who have not returned, missed follow-ups, or fallen outside their expected return window.",
-    toneClassName: "bg-tertiary-fixed text-on-tertiary-fixed",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4 16 10 10l4 4 6-7" />
-        <path d="M14 7h6v6" />
-      </svg>
-    ),
-  },
-  {
-    title: "No-shows & late cancellations",
-    description:
-      "Measure how much booked time is being lost when appointments are missed, canceled late, or never recovered.",
-    toneClassName: "bg-primary/10 text-primary",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="7.5" r="3.5" />
-        <path d="M5 19a7 7 0 0 1 14 0" />
-        <path d="m18 11 1.75 1.75L23 9.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Empty last-minute slots",
-    description:
-      "Find the openings that appear in your schedule and should be promoted to existing patients or clients before they disappear.",
-    toneClassName: "bg-sky-100 text-sky-700",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M8 7h8" />
-        <path d="M8 12h5" />
-        <path d="M5.5 4.75h13A1.75 1.75 0 0 1 20.25 6.5v11A1.75 1.75 0 0 1 18.5 19.25h-13A1.75 1.75 0 0 1 3.75 17.5v-11A1.75 1.75 0 0 1 5.5 4.75Z" />
-        <path d="m14 15 1.5 1.5L18.5 13" />
-      </svg>
-    ),
-  },
-];
-
-const trustStats = [
-  {
-    value: "Estimated missed revenue",
-    label: "Focused on the leaks that matter first",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-9 w-9"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 3.75 18.5 6v5.5c0 4.12-2.63 7.9-6.5 9-3.87-1.1-6.5-4.88-6.5-9V6L12 3.75Z" />
-        <path d="M9 12h6" />
-        <path d="M12 9v6" />
-      </svg>
-    ),
-  },
-  {
-    value: "Fastest recovery opportunity",
-    label: "Prioritize the first workflow with the clearest return",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-9 w-9"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="8" cy="8" r="3" />
-        <circle cx="16.5" cy="10" r="2.5" />
-        <path d="M3.5 19a5.5 5.5 0 0 1 9.8-3.4" />
-        <path d="M14.5 18h5" />
-        <path d="m17 15.5 2.5 2.5L17 20.5" />
-      </svg>
-    ),
-  },
-  {
-    value: "Suggested first rollout",
-    label: "Leave with a practical next step, not a long wishlist",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-        className="h-9 w-9"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 20.25c4.5-2.8 7.5-6.1 7.5-10.2A4.3 4.3 0 0 0 12 7.3a4.3 4.3 0 0 0-7.5 2.75c0 4.1 3 7.4 7.5 10.2Z" />
-      </svg>
-    ),
-  },
-];
-
-const roadmapSteps = [
-  {
-    number: "01",
-    title: "Current workflow review",
-    description:
-      "We look at how inactive patients or clients, cancellations, no-shows, and empty slots are handled today.",
-  },
-  {
-    number: "02",
-    title: "Revenue leak mapping",
-    description:
-      "We identify which segments and follow-up flows can produce the fastest measurable return.",
-  },
-  {
-    number: "03",
-    title: "Recommended rollout",
-    description:
-      "You leave with the first campaign, first loyalty or slot-rescue flow, and the metrics worth tracking first.",
-  },
-];
-
-const footerLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Find Missed Revenue", href: "/build-my-app#booking" },
-];
+type BuildMyAppPageProps = {
+  searchParams: Promise<{
+    vertical?: string | string[];
+  }>;
+};
 
 const calendlyEventUrl =
   "https://calendly.com/djordje-recallyflow/strategy-call";
+
+function getVerticalParam(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+function benefitToneClassName(tone: "tertiary" | "primary" | "sky") {
+  if (tone === "tertiary") {
+    return "bg-tertiary-fixed text-on-tertiary-fixed";
+  }
+
+  if (tone === "primary") {
+    return "bg-primary/10 text-primary";
+  }
+
+  return "bg-sky-100 text-sky-700";
+}
 
 function BrandIcon() {
   return (
@@ -183,28 +49,19 @@ function BrandIcon() {
   );
 }
 
-function CalendarIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className="h-6 w-6 text-primary"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="3.75" y="5.75" width="16.5" height="14.5" rx="2" />
-      <path d="M16 3.75v4" />
-      <path d="M8 3.75v4" />
-      <path d="M3.75 10.25h16.5" />
-      <path d="m9.5 15 1.7 1.7L15 13" />
-    </svg>
-  );
+export async function generateMetadata({
+  searchParams,
+}: BuildMyAppPageProps): Promise<Metadata> {
+  const params = await searchParams;
+  return getAuditPageCopy(getVerticalParam(params.vertical)).metadata;
 }
 
-export default function BuildMyAppPage() {
+export default async function BuildMyAppPage({
+  searchParams,
+}: BuildMyAppPageProps) {
+  const params = await searchParams;
+  const copy = getAuditPageCopy(getVerticalParam(params.vertical));
+
   return (
     <>
       <Script
@@ -218,30 +75,29 @@ export default function BuildMyAppPage() {
             <div className="space-y-12 lg:col-span-6">
               <div className="space-y-6">
                 <span className="inline-block rounded-full bg-surface-container px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-on-secondary-container">
-                  Free Missed Revenue Audit
+                  {copy.eyebrow}
                 </span>
                 <h1 className="font-display text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground md:text-6xl">
-                  Book your Free Missed Revenue Audit.
+                  {copy.title}
                 </h1>
                 <p className="max-w-xl text-xl leading-relaxed text-foreground-muted">
-                  Book a 30-minute working session to uncover where inactive
-                  patients or clients, no-shows, cancellations, and empty
-                  slots are leaking revenue today. We&apos;ll map the recovery
-                  opportunities worth solving first.
+                  {copy.description}
                 </p>
               </div>
 
               <div id="solutions" className="grid grid-cols-1 gap-6">
-                {benefitPillars.map((pillar) => (
+                {copy.benefits.map((pillar) => (
                   <article
                     key={pillar.title}
                     className="rounded-xl bg-surface-container-low p-6 transition-colors hover:bg-surface-container"
                   >
                     <div className="flex items-start gap-4">
                       <div
-                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${pillar.toneClassName}`}
+                        className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-lg ${benefitToneClassName(
+                          pillar.tone,
+                        )}`}
                       >
-                        {pillar.icon}
+                        <LandingIcon name={pillar.icon} />
                       </div>
                       <div>
                         <h3 className="mb-1 font-display text-lg font-bold text-foreground">
@@ -260,14 +116,11 @@ export default function BuildMyAppPage() {
             <div id="booking" className="lg:col-span-6">
               <div className="rounded-[2rem] bg-surface-container-lowest p-8 shadow-[0_20px_40px_rgba(25,28,30,0.04)] ring-1 ring-outline-variant/10 md:p-10">
                 <h2 className="mb-8 flex items-center gap-3 font-display text-2xl font-bold text-foreground">
-                  <CalendarIcon />
-                  Book your audit session
+                  <LandingIcon name="calendar" className="h-6 w-6 text-primary" />
+                  {copy.bookingHeading}
                 </h2>
                 <p className="mb-6 max-w-2xl text-sm leading-relaxed text-foreground-muted">
-                  Choose a time that works for you. You&apos;ll leave with an
-                  estimate of missed revenue, the fastest recovery opportunity,
-                  the first campaign to launch, and the right loyalty or slot
-                  rescue flow to add next.
+                  {copy.bookingDescription}
                 </p>
 
                 <div className="overflow-hidden rounded-[1.5rem] border border-outline-variant/10 bg-surface-container-low">
@@ -298,9 +151,11 @@ export default function BuildMyAppPage() {
             className="mt-24 border-t border-outline-variant/10 pt-12 text-center"
           >
             <div className="flex flex-wrap items-center justify-center gap-12 opacity-40 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:gap-24">
-              {trustStats.map((stat) => (
+              {copy.trustStats.map((stat) => (
                 <div key={stat.label} className="flex items-center gap-3">
-                  <span className="text-foreground">{stat.icon}</span>
+                  <span className="text-foreground">
+                    <LandingIcon name={stat.icon} className="h-9 w-9" />
+                  </span>
                   <div className="text-left">
                     <span className="block font-display text-lg font-bold leading-tight text-foreground">
                       {stat.value}
@@ -317,16 +172,15 @@ export default function BuildMyAppPage() {
           <section id="roadmap" className="mt-32">
             <div className="mb-16 text-center">
               <h2 className="font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-                What happens in your audit
+                {copy.roadmapTitle}
               </h2>
               <p className="mt-4 text-foreground-muted">
-                A short working session focused on the fastest recovery
-                opportunities, not a long implementation process.
+                {copy.roadmapDescription}
               </p>
             </div>
 
             <div className="grid gap-12 md:grid-cols-3">
-              {roadmapSteps.map((step) => (
+              {copy.roadmapSteps.map((step) => (
                 <article key={step.number} className="group relative">
                   <div className="font-display absolute -left-6 -top-6 select-none text-7xl font-black text-surface-container transition-colors group-hover:text-primary/20">
                     {step.number}
@@ -358,15 +212,18 @@ export default function BuildMyAppPage() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 text-xs text-slate-500">
-            {footerLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="transition-colors hover:text-slate-900"
-              >
-                {link.label}
-              </a>
-            ))}
+            <a href="#" className="transition-colors hover:text-slate-900">
+              Privacy Policy
+            </a>
+            <a href="#" className="transition-colors hover:text-slate-900">
+              Terms of Service
+            </a>
+            <a
+              href="#booking"
+              className="transition-colors hover:text-slate-900"
+            >
+              Find Missed Revenue
+            </a>
           </div>
 
           <p className="text-xs text-slate-500">
